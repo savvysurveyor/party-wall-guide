@@ -1,737 +1,605 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Party Wall Process Guide | Inform Surveying Limited</title>
-<meta name="description" content="A comprehensive guide to the Party Wall etc. Act 1996 — timescales, responsibilities and what to expect. Expert guidance from Inform Surveying Limited.">
+<title>Party Wall Guide | Inform Surveying Limited</title>
+<meta name="description" content="A clear guide to the Party Wall etc. Act 1996 — notices, timescales, responsibilities, common pitfalls and what to expect. Chartered Building Surveyors, Sheffield.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Rubik:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Rubik:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<!--
-  ============================================================
-  PHOTO PLACEMENT GUIDE — V3 (Cosmos-inspired redesign)
-  ============================================================
-  This layout uses 7 dark photo sections. To add your images:
-
-  1. Place your photos in the same folder as this HTML file
-  2. Find each section by its ID in the CSS below
-  3. Replace the background gradient with your image:
-     BEFORE:  background: linear-gradient(135deg, #0a1e28, #0E3542);
-     AFTER:   background: url('your-photo.jpg') center/cover no-repeat;
-
-  Photo sections and suggested image types:
-  ----------------------------------------------------------
-  #hero         → Wide dramatic construction/scaffolding (main hero, landscape)
-  #s-notices    → Close-up of party wall / brickwork detail
-  #s-bo         → Scaffolding or extension build in progress
-  #s-response   → Two neighbouring houses / terrace row
-  #s-ao         → Residential street / period properties
-  #s-faq        → Architectural detail / surveyor measuring
-  #s-cta        → Professional Inform branded image or site photo
-
-  All photos get an automatic dark overlay for text readability.
-  Recommended minimum: 1920x900px landscape.
-  ============================================================
--->
+<!-- Party Wall Guide — Inform Surveying Limited. Production build. -->
 
 <style>
-/* ===== RESET & VARIABLES ===== */
-:root {
-  --teal: #0E3542;
-  --teal-deep: #0a1e28;
-  --teal-mid: #1A5568;
-  --orange: #D67D24;
-  --orange-hover: #E8912F;
-  --orange-light: rgba(214,125,36,0.12);
-  --body: #555555;
-  --heading: #1D1D1B;
-  --white: #FFFFFF;
-  --off-white: #F5F6F7;
-  --light-grey: #E8EAED;
-  --dark-card: rgba(14,53,66,0.06);
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-  --shadow: 0 4px 20px rgba(0,0,0,0.07);
-  --shadow-lg: 0 12px 40px rgba(0,0,0,0.10);
-  --r: 6px;
-  --max: 1140px;
+/* ===== TOKENS ===== */
+:root{
+  --teal:#0E3542; --teal-deep:#08171e; --teal-mid:#1A5568;
+  --orange:#D67D24; --orange-hover:#E8912F; --orange-soft:rgba(214,125,36,0.12);
+  --body:#4a4f52; --heading:#15252c; --white:#fff;
+  --paper:#FAF8F5; --paper-mid:#F2EDE6; --line:#E4E0D9; --line-soft:#EDEAE4;
+  --crit:#B91C1C; --high:#C2410C; --med:#D67D24; --low:#166534;
+  --shadow-sm:0 1px 3px rgba(20,37,44,0.06);
+  --shadow:0 8px 30px rgba(20,37,44,0.09);
+  --shadow-lg:0 20px 55px rgba(20,37,44,0.16);
+  --r:8px; --r-lg:14px; --max:1180px;
 }
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 70px; }
-body { font-family:'Open Sans',sans-serif; color:var(--body); line-height:1.75; font-size:15px; background:var(--white); -webkit-font-smoothing:antialiased; }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:70px;}
+body{font-family:'Open Sans',sans-serif;color:var(--body);line-height:1.75;font-size:15.5px;background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+h1,h2,h3,h4,h5{font-family:'Rubik',sans-serif;color:var(--heading);}
+a{color:var(--orange);}
+img{max-width:100%;display:block;}
 
-/* ===== NAVIGATION (EVS-style persistent dark nav) ===== */
-.site-nav {
-  position:fixed; top:0; left:0; right:0; z-index:1000;
-  background:rgba(10,30,40,0.92); backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(255,255,255,0.06);
-  transition:background 0.3s;
-}
-.nav-inner {
-  max-width:var(--max); margin:0 auto;
-  display:flex; align-items:center; justify-content:space-between;
-  padding:0 2rem; height:60px;
-}
-.nav-brand {
-  font-family:'Rubik',sans-serif; font-weight:800; font-size:0.9rem;
-  color:var(--white); letter-spacing:0.5px; text-transform:uppercase; text-decoration:none;
-}
-.nav-brand em { font-style:normal; color:var(--orange); }
-.nav-links { display:flex; gap:0; align-items:center; }
-.nav-link {
-  color:rgba(255,255,255,0.55); font-family:'Rubik',sans-serif;
-  font-size:0.7rem; font-weight:500; text-decoration:none;
-  padding:0.5rem 1rem; text-transform:uppercase; letter-spacing:1.2px;
-  transition:color 0.2s; position:relative;
-}
-.nav-link::after {
-  content:''; position:absolute; bottom:0; left:1rem; right:1rem;
-  height:2px; background:var(--orange); transform:scaleX(0);
-  transition:transform 0.25s ease;
-}
-.nav-link:hover { color:rgba(255,255,255,0.9); }
-.nav-link.active { color:var(--white); }
-.nav-link.active::after { transform:scaleX(1); }
+/* ===== SCROLL PROGRESS ===== */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--orange);z-index:1100;transition:width .1s linear;}
 
-/* Mobile nav toggle */
-.nav-toggle { display:none; background:none; border:none; cursor:pointer; padding:0.5rem; }
-.nav-toggle span { display:block; width:22px; height:2px; background:var(--white); margin:5px 0; transition:0.3s; }
+/* ===== NAV ===== */
+.site-nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(8,23,30,0.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.07);transition:background .3s;}
+.nav-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.6rem;height:68px;}
+.nav-brand{display:flex;align-items:center;gap:.85rem;text-decoration:none;}
+.nav-brand img{height:41px;width:auto;}
+.nav-brand .tagline{font-family:'Rubik',sans-serif;font-weight:500;font-size:.64rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);border-left:1px solid rgba(255,255,255,.2);padding-left:.85rem;}
+.nav-links{display:flex;align-items:center;gap:0;}
+.nav-link{color:rgba(255,255,255,.6);font-family:'Rubik',sans-serif;font-size:.68rem;font-weight:500;text-decoration:none;padding:.5rem .85rem;text-transform:uppercase;letter-spacing:1.3px;transition:color .2s;position:relative;}
+.nav-link::after{content:'';position:absolute;bottom:0;left:.85rem;right:.85rem;height:2px;background:var(--orange);transform:scaleX(0);transition:transform .25s ease;}
+.nav-link:hover{color:#fff;}
+.nav-link.active{color:#fff;}
+.nav-link.active::after{transform:scaleX(1);}
+.nav-cta{background:var(--orange);color:#fff!important;border-radius:50px;padding:.5rem 1.1rem!important;margin-left:.6rem;}
+.nav-cta::after{display:none;}
+.nav-cta:hover{background:var(--orange-hover);}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem;}
+.nav-toggle span{display:block;width:23px;height:2px;background:#fff;margin:5px 0;transition:.3s;}
 
-/* ===== DARK PHOTO SECTIONS (EVS-style) ===== */
-.dark-section {
-  position:relative; overflow:hidden;
-  background:linear-gradient(135deg, var(--teal-deep) 0%, var(--teal) 60%, var(--teal-mid) 100%);
-  background-size:cover; background-position:center;
-  color:var(--white);
-}
-.dark-section::before {
-  content:''; position:absolute; inset:0;
-  background:linear-gradient(
-    180deg,
-    rgba(10,30,40,0.82) 0%,
-    rgba(10,30,40,0.55) 40%,
-    rgba(10,30,40,0.85) 100%
-  );
-  z-index:1;
-}
-.dark-section .section-inner {
-  position:relative; z-index:2;
-  max-width:var(--max); margin:0 auto; padding:0 2rem;
-}
+/* ===== DARK PHOTO SECTIONS ===== */
+.dark-section{position:relative;overflow:hidden;background:var(--teal);background-size:cover;background-position:center;color:#fff;}
+.dark-section::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,23,30,.78) 0%,rgba(8,23,30,.5) 42%,rgba(8,23,30,.88) 100%);z-index:1;}
+.dark-section .section-inner{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:0 1.6rem;}
 
-/* ===== HERO (full viewport, EVS-style) ===== */
-#hero { min-height:100vh; display:flex; align-items:center; padding-top:60px; }
-#hero .section-inner { width:100%; }
-.hero-content { max-width:750px; }
-.hero-tag {
-  font-family:'Rubik',sans-serif; font-size:0.72rem; font-weight:600;
-  text-transform:uppercase; letter-spacing:4px; color:var(--orange);
-  margin-bottom:1.5rem; display:flex; align-items:center; gap:0.8rem;
-}
-.hero-tag::before { content:''; width:40px; height:2px; background:var(--orange); }
-.hero-title {
-  font-family:'Rubik',sans-serif; font-weight:900; font-size:clamp(2.8rem,6vw,4.5rem);
-  line-height:1.05; letter-spacing:-2px; margin-bottom:1.5rem;
-}
-.hero-title span { color:var(--orange); display:block; }
-.hero-sub {
-  font-size:1.1rem; line-height:1.7; color:rgba(255,255,255,0.7);
-  max-width:550px; margin-bottom:2.5rem;
-}
-.hero-stats {
-  display:flex; gap:3rem; margin-top:2.5rem;
-  padding-top:2rem; border-top:1px solid rgba(255,255,255,0.1);
-}
-.hero-stat .num {
-  font-family:'Rubik',sans-serif; font-weight:800; font-size:2.2rem;
-  color:var(--orange); line-height:1;
-}
-.hero-stat .label {
-  font-size:0.78rem; color:rgba(255,255,255,0.5); margin-top:0.3rem;
-  text-transform:uppercase; letter-spacing:1px;
-}
-.hero-scroll {
-  position:absolute; bottom:2.5rem; left:50%; transform:translateX(-50%);
-  z-index:2; text-align:center;
-}
-.hero-scroll span {
-  font-family:'Rubik',sans-serif; font-size:0.65rem; font-weight:500;
-  text-transform:uppercase; letter-spacing:3px; color:rgba(255,255,255,0.35);
-  display:block; margin-bottom:0.5rem;
-}
-.hero-scroll .arrow {
-  width:20px; height:20px; border-right:2px solid rgba(255,255,255,0.3);
-  border-bottom:2px solid rgba(255,255,255,0.3);
-  transform:rotate(45deg); margin:0 auto;
-  animation:bounce 2s infinite;
-}
-@keyframes bounce {
-  0%,20%,50%,80%,100% { transform:translateY(0) rotate(45deg); }
-  40% { transform:translateY(8px) rotate(45deg); }
-  60% { transform:translateY(4px) rotate(45deg); }
-}
+/* ===== HERO ===== */
+#hero{min-height:100vh;display:flex;align-items:center;padding-top:68px;}
+#hero::after{content:'';position:absolute;inset:0;background-image:inherit;background-size:cover;background-position:center;z-index:0;animation:kenburns 28s ease-out infinite alternate;}
+@keyframes kenburns{from{transform:scale(1.02);}to{transform:scale(1.12);}}
+#hero .section-inner{width:100%;}
+.hero-content{max-width:780px;}
+.hero-tag{font-family:'Rubik',sans-serif;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:4px;color:var(--orange);margin-bottom:1.4rem;display:flex;align-items:center;gap:.8rem;}
+.hero-tag::before{content:'';width:42px;height:2px;background:var(--orange);}
+.hero-title{font-family:'Rubik',sans-serif;font-weight:900;font-size:clamp(2.9rem,6.5vw,5rem);line-height:1.02;letter-spacing:-2px;margin-bottom:1.4rem;color:#fff;}
+.hero-title span{color:var(--orange);display:block;}
+.hero-sub{font-size:1.12rem;line-height:1.7;color:rgba(255,255,255,.82);max-width:600px;margin-bottom:2.2rem;}
+.hero-actions{display:flex;gap:.9rem;flex-wrap:wrap;}
+.hero-stats{display:flex;gap:2.8rem;margin-top:2.6rem;padding-top:1.8rem;border-top:1px solid rgba(255,255,255,.14);flex-wrap:wrap;}
+.hero-stat .num{font-family:'Rubik',sans-serif;font-weight:800;font-size:2rem;color:var(--orange);line-height:1;}
+.hero-stat .label{font-size:.72rem;color:rgba(255,255,255,.62);margin-top:.35rem;text-transform:uppercase;letter-spacing:1px;}
+.hero-scroll{position:absolute;bottom:1.8rem;left:50%;transform:translateX(-50%);z-index:2;text-align:center;}
+.hero-scroll span{font-family:'Rubik',sans-serif;font-size:.62rem;font-weight:500;text-transform:uppercase;letter-spacing:3px;color:rgba(255,255,255,.4);display:block;margin-bottom:.5rem;}
+.hero-scroll .arrow{width:18px;height:18px;border-right:2px solid rgba(255,255,255,.35);border-bottom:2px solid rgba(255,255,255,.35);transform:rotate(45deg);margin:0 auto;animation:bounce 2s infinite;}
+@keyframes bounce{0%,20%,50%,80%,100%{transform:translateY(0) rotate(45deg);}40%{transform:translateY(8px) rotate(45deg);}60%{transform:translateY(4px) rotate(45deg);}}
 
-/* ===== SECTION HEADERS (EVS numbered style) ===== */
-.section-header {
-  padding:6rem 2rem 5rem;
-  display:flex; align-items:flex-end; gap:2rem;
-  min-height:45vh;
-}
-.section-header .section-inner {
-  width:100%; display:flex; align-items:flex-end; justify-content:space-between;
-}
-.section-header .section-num {
-  font-family:'Rubik',sans-serif; font-weight:900;
-  font-size:clamp(5rem,12vw,9rem); line-height:0.85;
-  color:rgba(255,255,255,0.06); letter-spacing:-5px;
-  position:absolute; right:2rem; bottom:1rem;
-}
-.section-header .section-label {
-  font-family:'Rubik',sans-serif; font-size:0.7rem; font-weight:600;
-  text-transform:uppercase; letter-spacing:4px; color:var(--orange);
-  margin-bottom:1rem; display:flex; align-items:center; gap:0.8rem;
-}
-.section-header .section-label::before {
-  content:''; width:30px; height:2px; background:var(--orange);
-}
-.section-header h2 {
-  font-family:'Rubik',sans-serif; font-weight:800;
-  font-size:clamp(1.8rem,4vw,3rem); line-height:1.1; letter-spacing:-1px;
-  margin-bottom:0.8rem;
-}
-.section-header h2 em { font-style:normal; color:var(--orange); }
-.section-header p {
-  font-size:1rem; color:rgba(255,255,255,0.6); max-width:500px; line-height:1.7;
-}
+/* ===== BUTTONS ===== */
+.btn{font-family:'Rubik',sans-serif;font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:1.3px;padding:.95rem 2rem;border-radius:50px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:.5rem;cursor:pointer;border:2px solid transparent;}
+.btn-primary{background:var(--orange);color:#fff;border-color:var(--orange);}
+.btn-primary:hover{background:var(--orange-hover);border-color:var(--orange-hover);transform:translateY(-2px);box-shadow:var(--shadow);}
+.btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.35);}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.06);}
+.btn-dark{background:var(--teal);color:#fff;border-color:var(--teal);}
+.btn-dark:hover{background:var(--teal-mid);border-color:var(--teal-mid);transform:translateY(-2px);}
 
-/* ===== LIGHT CONTENT SECTIONS (Ascon-style) ===== */
-.light-section {
-  background:var(--white);
-  padding:4rem 2rem;
-}
-.light-section.alt { background:var(--off-white); }
-.light-inner { max-width:var(--max); margin:0 auto; }
-.light-section h3 {
-  font-family:'Rubik',sans-serif; font-weight:700; font-size:1.3rem;
-  color:var(--heading); margin-bottom:1.5rem; letter-spacing:-0.3px;
-}
+/* ===== PATH SELECTOR ===== */
+.path-section{background:var(--paper);padding:4rem 1.6rem;}
+.path-inner{max-width:var(--max);margin:0 auto;}
+.path-eyebrow{text-align:center;font-family:'Rubik',sans-serif;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:3px;color:var(--orange);margin-bottom:.6rem;}
+.path-head{text-align:center;font-family:'Rubik',sans-serif;font-weight:800;font-size:clamp(1.6rem,3.5vw,2.3rem);color:var(--heading);margin-bottom:.6rem;letter-spacing:-.5px;}
+.path-intro{text-align:center;max-width:620px;margin:0 auto 2.6rem;font-size:1rem;}
+.path-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;}
+.path-card{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:2.2rem;position:relative;overflow:hidden;transition:transform .22s,box-shadow .22s,border-color .22s;}
+.path-card::before{content:'';position:absolute;top:0;left:0;width:5px;height:100%;background:var(--orange);transform:scaleY(0);transform-origin:top;transition:transform .25s;}
+.path-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:transparent;}
+.path-card:hover::before{transform:scaleY(1);}
+.path-card .pc-icon{width:54px;height:54px;border-radius:14px;background:var(--orange-soft);display:flex;align-items:center;justify-content:center;color:var(--orange);margin-bottom:1.1rem;}
+.path-card h3{font-size:1.3rem;font-weight:700;margin-bottom:.5rem;}
+.path-card p{font-size:.92rem;margin-bottom:1rem;}
+.path-card .pc-go{font-family:'Rubik',sans-serif;font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:1.2px;color:var(--orange);display:flex;align-items:center;gap:.5rem;}
 
-/* ===== NOTICE TYPE CARDS (Ascon feature-card style) ===== */
-.notice-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:1.5rem; }
-.notice-card {
-  background:var(--white); border-radius:var(--r); padding:2rem;
-  border:1px solid var(--light-grey); position:relative;
-  transition:transform 0.2s, box-shadow 0.2s;
-}
-.notice-card:hover { transform:translateY(-3px); box-shadow:var(--shadow); }
-.notice-card::before {
-  content:attr(data-section); position:absolute; top:1.5rem; right:1.5rem;
-  font-family:'Rubik',sans-serif; font-weight:800; font-size:0.7rem;
-  padding:0.2rem 0.7rem; border-radius:20px;
-  background:var(--orange-light); color:var(--orange);
-  text-transform:uppercase; letter-spacing:0.5px;
-}
-.notice-card h4 {
-  font-family:'Rubik',sans-serif; font-weight:700; font-size:1.05rem;
-  color:var(--heading); margin-bottom:0.6rem; padding-right:5rem;
-}
-.notice-card p { font-size:0.88rem; line-height:1.7; margin-bottom:0.8rem; }
-.notice-card ul { font-size:0.86rem; margin-left:1.2rem; margin-bottom:0.6rem; }
-.notice-card li { margin-bottom:0.3rem; }
-.notice-card .notice-time {
-  font-family:'Rubik',sans-serif; font-size:0.72rem; font-weight:600;
-  color:var(--teal); display:flex; align-items:center; gap:0.4rem;
-  margin-top:1rem; padding-top:0.8rem; border-top:1px solid var(--light-grey);
-}
+/* ===== SECTION HEADERS (numbered photo dividers) ===== */
+.section-header{padding:6rem 1.6rem 5rem;display:flex;align-items:flex-end;min-height:46vh;}
+.section-header .section-inner{width:100%;display:flex;align-items:flex-end;justify-content:space-between;position:relative;}
+.section-header .section-num{font-family:'Rubik',sans-serif;font-weight:900;font-size:clamp(5rem,13vw,10rem);line-height:.82;color:rgba(255,255,255,.08);letter-spacing:-5px;position:absolute;right:0;bottom:-.5rem;}
+.section-header .section-label{font-family:'Rubik',sans-serif;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:4px;color:var(--orange);margin-bottom:1rem;display:flex;align-items:center;gap:.8rem;}
+.section-header .section-label::before{content:'';width:32px;height:2px;background:var(--orange);}
+.section-header h2{font-family:'Rubik',sans-serif;font-weight:800;font-size:clamp(1.9rem,4.2vw,3.1rem);line-height:1.08;letter-spacing:-1px;margin-bottom:.8rem;color:#fff;max-width:13ch;}
+.section-header h2 em{font-style:normal;color:var(--orange);}
+.section-header p{font-size:1.02rem;color:rgba(255,255,255,.78);max-width:520px;line-height:1.7;}
 
-/* ===== PROCESS STEPS (EVS numbered list + Ascon cards hybrid) ===== */
-.steps-list { display:flex; flex-direction:column; gap:1rem; }
-.step-item {
-  display:grid; grid-template-columns:4rem 1fr; gap:1.5rem;
-  padding:1.8rem 2rem; background:var(--white); border-radius:var(--r);
-  border:1px solid var(--light-grey); cursor:pointer;
-  transition:all 0.2s;
-}
-.step-item:hover { box-shadow:var(--shadow); border-color:rgba(214,125,36,0.3); }
-.step-num {
-  font-family:'Rubik',sans-serif; font-weight:800; font-size:1.6rem;
-  color:var(--orange); line-height:1;
-  padding-top:0.2rem;
-}
-.step-content h4 {
-  font-family:'Rubik',sans-serif; font-weight:700; font-size:1rem;
-  color:var(--heading); margin-bottom:0.3rem;
-}
-.step-content .step-time {
-  font-family:'Rubik',sans-serif; font-size:0.68rem; font-weight:600;
-  color:var(--teal-mid); text-transform:uppercase; letter-spacing:0.5px;
-  margin-bottom:0.5rem; display:inline-block;
-}
-.step-content p { font-size:0.88rem; }
-.step-detail {
-  display:none; margin-top:1rem; padding-top:1rem;
-  border-top:1px solid var(--light-grey); font-size:0.86rem;
-}
-.step-detail.open { display:block; }
-.step-detail h5 {
-  font-family:'Rubik',sans-serif; font-size:0.78rem; font-weight:700;
-  color:var(--teal); text-transform:uppercase; letter-spacing:0.5px;
-  margin:0.8rem 0 0.3rem;
-}
-.step-detail h5:first-child { margin-top:0; }
-.step-detail ul { margin-left:1.2rem; }
-.step-detail li { margin-bottom:0.25rem; }
-.step-expand {
-  font-family:'Rubik',sans-serif; font-size:0.7rem; font-weight:600;
-  color:var(--orange); text-transform:uppercase; letter-spacing:0.5px;
-  margin-top:0.8rem; display:flex; align-items:center; gap:0.4rem;
-}
-.step-expand .chevron { transition:transform 0.2s; display:inline-block; }
-.step-item.expanded .step-expand .chevron { transform:rotate(90deg); }
+/* ===== LIGHT SECTIONS ===== */
+.light-section{background:#fff;padding:4.5rem 1.6rem;}
+.light-section.alt{background:var(--paper);}
+.light-inner{max-width:var(--max);margin:0 auto;}
+.lead-in{max-width:680px;margin-bottom:2.6rem;}
+.lead-in .li-label{font-family:'Rubik',sans-serif;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:2.5px;color:var(--orange);margin-bottom:.6rem;display:block;}
+.lead-in h3{font-family:'Rubik',sans-serif;font-weight:800;font-size:clamp(1.5rem,3vw,2.1rem);color:var(--heading);margin-bottom:.7rem;letter-spacing:-.5px;}
+.lead-in p{font-size:1.02rem;}
+
+/* ===== NOTICE CARDS ===== */
+.notice-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1.4rem;}
+.notice-card{background:#fff;border-radius:var(--r-lg);padding:2rem;border:1px solid var(--line);position:relative;transition:transform .2s,box-shadow .2s;}
+.notice-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+.notice-card .nc-badge{position:absolute;top:1.6rem;right:1.6rem;font-family:'Rubik',sans-serif;font-weight:700;font-size:.66rem;padding:.25rem .7rem;border-radius:50px;background:var(--orange-soft);color:var(--orange);text-transform:uppercase;letter-spacing:.5px;}
+.notice-card .nc-icon{width:46px;height:46px;border-radius:12px;background:var(--teal);display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:1.1rem;}
+.notice-card h4{font-family:'Rubik',sans-serif;font-weight:700;font-size:1.1rem;color:var(--heading);margin-bottom:.6rem;padding-right:4rem;}
+.notice-card p{font-size:.9rem;line-height:1.7;margin-bottom:.8rem;}
+.notice-card ul{font-size:.88rem;margin-left:1.1rem;margin-bottom:.6rem;}
+.notice-card li{margin-bottom:.35rem;}
+.notice-card .notice-time{font-family:'Rubik',sans-serif;font-size:.74rem;font-weight:600;color:var(--teal);display:flex;align-items:center;gap:.45rem;margin-top:1rem;padding-top:.85rem;border-top:1px solid var(--line);}
+
+/* ===== STATS BAR ===== */
+.stats-bar{background:var(--teal);padding:3.2rem 1.6rem;}
+.stats-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center;}
+.stat-item .stat-num{font-family:'Rubik',sans-serif;font-weight:900;font-size:2.7rem;color:var(--orange);line-height:1;margin-bottom:.4rem;}
+.stat-item .stat-label{font-family:'Rubik',sans-serif;font-size:.7rem;font-weight:500;text-transform:uppercase;letter-spacing:1.4px;color:rgba(255,255,255,.6);}
+
+/* ===== PROCESS STEPS (timeline) ===== */
+.steps-list{display:flex;flex-direction:column;gap:1rem;position:relative;}
+.step-item{display:grid;grid-template-columns:3.4rem 1fr;gap:1.4rem;padding:1.7rem 1.9rem;background:#fff;border-radius:var(--r-lg);border:1px solid var(--line);cursor:pointer;transition:all .2s;}
+.step-item:hover{box-shadow:var(--shadow);border-color:rgba(214,125,36,.4);}
+.step-num{font-family:'Rubik',sans-serif;font-weight:800;font-size:1.05rem;color:#fff;background:var(--orange);width:2.4rem;height:2.4rem;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1;}
+.step-content h4{font-family:'Rubik',sans-serif;font-weight:700;font-size:1.05rem;color:var(--heading);margin-bottom:.3rem;}
+.step-content .step-time{font-family:'Rubik',sans-serif;font-size:.68rem;font-weight:600;color:var(--white);background:var(--teal-mid);padding:.18rem .6rem;border-radius:50px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.6rem;display:inline-block;}
+.step-content p{font-size:.9rem;}
+.step-detail{display:none;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.88rem;}
+.step-detail.open{display:block;}
+.step-detail h5{font-family:'Rubik',sans-serif;font-size:.78rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.5px;margin:.9rem 0 .35rem;}
+.step-detail h5:first-child{margin-top:0;}
+.step-detail ul{margin-left:1.2rem;}
+.step-detail li{margin-bottom:.28rem;}
+.step-expand{font-family:'Rubik',sans-serif;font-size:.7rem;font-weight:600;color:var(--orange);text-transform:uppercase;letter-spacing:.5px;margin-top:.8rem;display:flex;align-items:center;gap:.4rem;}
+.step-expand .chevron{transition:transform .2s;display:inline-block;}
+.step-item.expanded .step-expand .chevron{transform:rotate(90deg);}
 
 /* ===== RESPONSE BRANCH CARDS ===== */
-.branch-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
-.branch-card {
-  padding:2rem; border-radius:var(--r); text-align:center;
-  transition:transform 0.2s, box-shadow 0.2s;
-}
-.branch-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-lg); }
-.branch-card.consent { background:#E8F8F0; border:2px solid #27AE60; }
-.branch-card.dissent { background:#FDEDEC; border:2px solid #C0392B; }
-.branch-card.noresponse { background:#FEF9E7; border:2px solid #E6A817; }
-.branch-icon {
-  width:3.5rem; height:3.5rem; border-radius:50%; margin:0 auto 1rem;
-  display:flex; align-items:center; justify-content:center;
-  font-size:1.5rem;
-}
-.consent .branch-icon { background:#27AE60; color:white; }
-.dissent .branch-icon { background:#C0392B; color:white; }
-.noresponse .branch-icon { background:#E6A817; color:white; }
-.branch-card h4 {
-  font-family:'Rubik',sans-serif; font-weight:700; font-size:1.05rem;
-  color:var(--heading); margin-bottom:0.5rem;
-}
-.branch-card p { font-size:0.86rem; line-height:1.65; }
-.branch-card .result {
-  font-family:'Rubik',sans-serif; font-size:0.72rem; font-weight:700;
-  text-transform:uppercase; letter-spacing:1px; margin-top:1rem;
-  padding-top:0.8rem; border-top:1px solid rgba(0,0,0,0.08);
-}
-.consent .result { color:#27AE60; }
-.dissent .result { color:#C0392B; }
-.noresponse .result { color:#E6A817; }
+.branch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.branch-card{padding:2rem;border-radius:var(--r-lg);text-align:center;transition:transform .2s,box-shadow .2s;border:2px solid;}
+.branch-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+.branch-card.consent{background:#EAF8F1;border-color:#27AE60;}
+.branch-card.dissent{background:#FDEDEC;border-color:#C0392B;}
+.branch-card.noresponse{background:#FEF8E7;border-color:#E6A817;}
+.branch-icon{width:3.4rem;height:3.4rem;border-radius:50%;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;color:#fff;}
+.consent .branch-icon{background:#27AE60;}
+.dissent .branch-icon{background:#C0392B;}
+.noresponse .branch-icon{background:#E6A817;}
+.branch-card h4{font-family:'Rubik',sans-serif;font-weight:700;font-size:1.08rem;color:var(--heading);margin-bottom:.5rem;}
+.branch-card p{font-size:.88rem;line-height:1.65;}
+.branch-card .result{font-family:'Rubik',sans-serif;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-top:1rem;padding-top:.85rem;border-top:1px solid rgba(0,0,0,.09);}
+.consent .result{color:#1e8449;}
+.dissent .result{color:#a93226;}
+.noresponse .result{color:#b9770a;}
 
-/* ===== KEY NUMBERS BAR (Ascon stats style) ===== */
-.stats-bar {
-  background:var(--teal); padding:3rem 2rem;
-}
-.stats-inner {
-  max-width:var(--max); margin:0 auto;
-  display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; text-align:center;
-}
-.stat-item .stat-num {
-  font-family:'Rubik',sans-serif; font-weight:900; font-size:2.8rem;
-  color:var(--orange); line-height:1; margin-bottom:0.4rem;
-}
-.stat-item .stat-label {
-  font-family:'Rubik',sans-serif; font-size:0.7rem; font-weight:500;
-  text-transform:uppercase; letter-spacing:1.5px; color:rgba(255,255,255,0.5);
-}
+/* ===== PITFALLS ===== */
+.pitfall-intro{display:grid;grid-template-columns:1.1fr .9fr;gap:2.4rem;align-items:center;margin-bottom:3rem;}
+.pitfall-intro .pi-figure{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);position:relative;}
+.pitfall-intro .pi-figure img{width:100%;height:100%;object-fit:cover;min-height:240px;}
+.pitfall-intro .pi-figure figcaption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(8,23,30,.85));color:rgba(255,255,255,.92);font-size:.78rem;padding:1.6rem 1rem .8rem;}
+.pitfall-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.4rem;}
+.pitfall-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:1.8rem;position:relative;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;}
+.pitfall-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+.pf-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem;}
+.pf-num{font-family:'Rubik',sans-serif;font-weight:900;font-size:1.5rem;color:var(--paper-mid);line-height:1;background:var(--teal);width:2.4rem;height:2.4rem;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#fff;}
+.pf-sev{font-family:'Rubik',sans-serif;font-weight:700;font-size:.62rem;text-transform:uppercase;letter-spacing:.8px;padding:.25rem .65rem;border-radius:50px;color:#fff;}
+.pf-sev.crit{background:var(--crit);}
+.pf-sev.high{background:var(--high);}
+.pf-sev.med{background:var(--med);}
+.pitfall-card h4{font-family:'Rubik',sans-serif;font-weight:700;font-size:1.08rem;color:var(--heading);margin-bottom:.55rem;line-height:1.3;}
+.pitfall-card .pf-quote{font-style:italic;color:var(--high);font-size:.92rem;margin-bottom:.6rem;font-weight:600;}
+.pitfall-card p{font-size:.9rem;line-height:1.68;margin-bottom:.8rem;}
+.pf-fix{margin-top:auto;background:var(--paper);border-left:3px solid var(--orange);border-radius:0 var(--r) var(--r) 0;padding:.8rem 1rem;font-size:.86rem;}
+.pf-fix strong{font-family:'Rubik',sans-serif;color:var(--teal);font-size:.7rem;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:.2rem;}
 
-/* ===== FAQ ACCORDION (Ascon clean style) ===== */
-.faq-list { max-width:800px; }
-.faq-item {
-  border-bottom:1px solid var(--light-grey);
-}
-.faq-q {
-  display:flex; justify-content:space-between; align-items:center;
-  padding:1.3rem 0; cursor:pointer; gap:1rem;
-  font-family:'Rubik',sans-serif; font-weight:600; font-size:0.95rem;
-  color:var(--heading); transition:color 0.2s; width:100%;
-  background:none; border:none; text-align:left;
-}
-.faq-q:hover { color:var(--orange); }
-.faq-q .plus {
-  width:1.5rem; height:1.5rem; flex-shrink:0;
-  border:2px solid var(--light-grey); border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  font-size:0.9rem; color:var(--body); transition:all 0.2s;
-}
-.faq-item.open .faq-q .plus { background:var(--orange); border-color:var(--orange); color:white; transform:rotate(45deg); }
-.faq-a {
-  display:none; padding:0 0 1.5rem; font-size:0.9rem; line-height:1.75;
-  max-width:700px;
-}
-.faq-item.open .faq-a { display:block; }
+/* ===== ACCESS CALLOUT ===== */
+.access-callout{display:grid;grid-template-columns:.85fr 1.15fr;gap:0;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg);margin-bottom:3rem;background:var(--teal);}
+.access-figure{position:relative;min-height:300px;background-size:cover;background-position:center;}
+.access-body{padding:2.6rem 2.4rem;color:#fff;}
+.access-body .ac-flag{display:inline-flex;align-items:center;gap:.5rem;background:var(--crit);color:#fff;font-family:'Rubik',sans-serif;font-weight:700;font-size:.68rem;text-transform:uppercase;letter-spacing:1.2px;padding:.35rem .9rem;border-radius:50px;margin-bottom:1.1rem;}
+.access-body h3{font-family:'Rubik',sans-serif;font-weight:800;font-size:clamp(1.5rem,3vw,2rem);color:#fff;margin-bottom:.9rem;letter-spacing:-.5px;line-height:1.15;}
+.access-body p{color:rgba(255,255,255,.84);font-size:.96rem;margin-bottom:.9rem;}
+.access-body p strong{color:#fff;}
+.access-points{list-style:none;margin:1.2rem 0 0;display:flex;flex-direction:column;gap:.7rem;}
+.access-points li{display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:rgba(255,255,255,.88);}
+.access-points li svg{flex-shrink:0;margin-top:3px;color:var(--orange);}
+
+/* ===== FAQ ===== */
+.faq-list{max-width:820px;}
+.faq-item{border-bottom:1px solid var(--line);}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:1.3rem 0;cursor:pointer;gap:1rem;font-family:'Rubik',sans-serif;font-weight:600;font-size:.98rem;color:var(--heading);transition:color .2s;width:100%;background:none;border:none;text-align:left;}
+.faq-q:hover{color:var(--orange);}
+.faq-q .plus{width:1.6rem;height:1.6rem;flex-shrink:0;border:2px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.95rem;color:var(--body);transition:all .2s;}
+.faq-item.open .faq-q .plus{background:var(--orange);border-color:var(--orange);color:#fff;transform:rotate(45deg);}
+.faq-a{display:none;padding:0 0 1.5rem;font-size:.92rem;line-height:1.78;max-width:740px;}
+.faq-item.open .faq-a{display:block;}
 
 /* ===== CHECKLIST ===== */
-.checklist-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1rem; }
-.check-item {
-  display:flex; align-items:flex-start; gap:0.8rem;
-  padding:1rem 1.2rem; border-radius:var(--r);
-  background:var(--white); border:1px solid var(--light-grey);
-  cursor:pointer; transition:all 0.2s; font-size:0.88rem;
-}
-.check-item:hover { border-color:var(--orange); }
-.check-item.checked { background:var(--off-white); }
-.check-item.checked span { text-decoration:line-through; opacity:0.5; }
-.check-box {
-  width:1.3rem; height:1.3rem; flex-shrink:0; border-radius:4px;
-  border:2px solid var(--light-grey); display:flex; align-items:center;
-  justify-content:center; font-size:0.7rem; transition:all 0.15s; margin-top:1px;
-}
-.check-item.checked .check-box { background:var(--orange); border-color:var(--orange); color:white; }
+.checklist-bar{display:flex;align-items:center;gap:1rem;margin-bottom:1.6rem;flex-wrap:wrap;}
+.checklist-progress{flex:1;min-width:200px;height:8px;background:var(--line);border-radius:50px;overflow:hidden;}
+.checklist-progress span{display:block;height:100%;width:0;background:var(--orange);border-radius:50px;transition:width .3s;}
+.checklist-count{font-family:'Rubik',sans-serif;font-weight:700;font-size:.8rem;color:var(--teal);}
+.checklist-reset{font-family:'Rubik',sans-serif;font-size:.7rem;font-weight:600;color:var(--body);background:none;border:1px solid var(--line);border-radius:50px;padding:.35rem .9rem;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;}
+.checklist-reset:hover{border-color:var(--orange);color:var(--orange);}
+.checklist-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:.8rem;}
+.check-item{display:flex;align-items:flex-start;gap:.8rem;padding:1rem 1.2rem;border-radius:var(--r);background:#fff;border:1px solid var(--line);cursor:pointer;transition:all .2s;font-size:.9rem;}
+.check-item:hover{border-color:var(--orange);}
+.check-item.checked{background:var(--paper);}
+.check-item.checked span{text-decoration:line-through;opacity:.5;}
+.check-box{width:1.35rem;height:1.35rem;flex-shrink:0;border-radius:5px;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:.72rem;color:transparent;transition:all .15s;margin-top:1px;}
+.check-item.checked .check-box{background:var(--orange);border-color:var(--orange);color:#fff;}
 
-/* ===== CTA SECTION ===== */
-.cta-section { padding:6rem 2rem; text-align:center; min-height:50vh; display:flex; align-items:center; }
-.cta-section .section-inner { width:100%; }
-.cta-section h2 {
-  font-family:'Rubik',sans-serif; font-weight:800;
-  font-size:clamp(2rem,4vw,3rem); letter-spacing:-1px; margin-bottom:1rem;
-}
-.cta-section h2 em { font-style:normal; color:var(--orange); }
-.cta-section p { font-size:1.05rem; color:rgba(255,255,255,0.65); max-width:550px; margin:0 auto 2.5rem; }
-.cta-buttons { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
-.btn {
-  font-family:'Rubik',sans-serif; font-weight:600; font-size:0.82rem;
-  text-transform:uppercase; letter-spacing:1.5px; padding:1rem 2.5rem;
-  border-radius:var(--r); text-decoration:none; transition:all 0.2s;
-  display:inline-flex; align-items:center; gap:0.5rem;
-}
-.btn-primary { background:var(--orange); color:white; border:2px solid var(--orange); }
-.btn-primary:hover { background:var(--orange-hover); border-color:var(--orange-hover); }
-.btn-outline { background:transparent; color:white; border:2px solid rgba(255,255,255,0.3); }
-.btn-outline:hover { border-color:white; }
-.cta-contact {
-  margin-top:2.5rem; font-size:0.85rem; color:rgba(255,255,255,0.45);
-}
-.cta-contact a { color:var(--orange); text-decoration:none; }
-.cta-contact a:hover { text-decoration:underline; }
+/* ===== RESOURCES ===== */
+.res-group{margin-bottom:2.4rem;}
+.res-group-title{font-family:'Rubik',sans-serif;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:2px;color:var(--orange);margin-bottom:1rem;display:flex;align-items:center;gap:.7rem;}
+.res-group-title::after{content:'';flex:1;height:1px;background:var(--line);}
+.res-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1rem;}
+.res-card{display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.3rem 1.4rem;text-decoration:none;color:inherit;transition:all .2s;}
+.res-card:hover{border-color:var(--orange);box-shadow:var(--shadow-sm);transform:translateY(-2px);}
+.res-card .res-icon{width:40px;height:40px;border-radius:10px;background:var(--orange-soft);color:var(--orange);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.res-card h4{font-family:'Rubik',sans-serif;font-weight:700;font-size:.96rem;color:var(--heading);margin-bottom:.25rem;display:flex;align-items:center;gap:.4rem;}
+.res-card h4 svg{color:var(--body);opacity:.5;flex-shrink:0;}
+.res-card p{font-size:.82rem;line-height:1.55;margin:0;}
+.res-card .res-src{font-family:'Rubik',sans-serif;font-size:.66rem;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--orange);margin-top:.4rem;display:block;}
+
+/* ===== CTA ===== */
+.cta-section{padding:6rem 1.6rem;text-align:center;min-height:54vh;display:flex;align-items:center;}
+.cta-section .section-inner{width:100%;}
+.cta-section h2{font-family:'Rubik',sans-serif;font-weight:800;font-size:clamp(2rem,4.2vw,3.1rem);letter-spacing:-1px;margin-bottom:1rem;color:#fff;}
+.cta-section h2 em{font-style:normal;color:var(--orange);}
+.cta-section p{font-size:1.06rem;color:rgba(255,255,255,.82);max-width:580px;margin:0 auto 2.4rem;}
+.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.cta-contact{margin-top:2.4rem;font-size:.86rem;color:rgba(255,255,255,.55);line-height:1.8;}
+.cta-contact a{color:var(--orange);text-decoration:none;}
+.cta-contact a:hover{text-decoration:underline;}
 
 /* ===== FOOTER ===== */
-.site-footer {
-  background:var(--teal-deep); padding:2rem;
-  text-align:center; font-size:0.75rem; color:rgba(255,255,255,0.3);
-  border-top:1px solid rgba(255,255,255,0.05);
-}
-.site-footer a { color:var(--orange); text-decoration:none; }
+.site-footer{background:var(--teal-deep);padding:2.4rem 1.6rem;text-align:center;font-size:.76rem;color:rgba(255,255,255,.4);border-top:1px solid rgba(255,255,255,.06);line-height:1.9;}
+.site-footer img{height:24px;margin:0 auto 1rem;opacity:.9;}
+.site-footer a{color:var(--orange);text-decoration:none;}
+.site-footer .fine{font-size:.68rem;color:rgba(255,255,255,.28);margin-top:.8rem;}
+
+/* ===== REVEAL ON SCROLL ===== */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:none;}
 
 /* ===== RESPONSIVE ===== */
-@media (max-width:900px) {
-  .branch-grid { grid-template-columns:1fr; }
-  .stats-inner { grid-template-columns:repeat(2,1fr); gap:1.5rem; }
-  .section-header .section-num { font-size:5rem; }
-  .hero-stats { flex-direction:column; gap:1.5rem; }
-  .step-item { grid-template-columns:3rem 1fr; }
+@media (max-width:920px){
+  .path-grid,.pitfall-intro,.access-callout{grid-template-columns:1fr;}
+  .branch-grid{grid-template-columns:1fr;}
+  .stats-inner{grid-template-columns:repeat(2,1fr);gap:1.8rem;}
+  .access-figure{min-height:220px;}
+  .hero-stats{gap:1.8rem;}
 }
-@media (max-width:700px) {
-  .nav-links { display:none; }
-  .nav-links.open { display:flex; flex-direction:column; position:absolute; top:60px; left:0; right:0; background:rgba(10,30,40,0.97); padding:1rem 2rem; gap:0; }
-  .nav-link { padding:0.8rem 0; font-size:0.8rem; }
-  .nav-toggle { display:block; }
-  .notice-grid { grid-template-columns:1fr; }
-  .checklist-grid { grid-template-columns:1fr; }
-  .section-header { min-height:35vh; padding:5rem 2rem 4rem; }
-  .stats-inner { grid-template-columns:1fr 1fr; }
+@media (max-width:760px){
+  .nav-links{display:none;}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:rgba(8,23,30,.98);padding:1rem 1.6rem;gap:0;}
+  .nav-link{padding:.8rem 0;font-size:.82rem;}
+  .nav-cta{margin:.6rem 0 0;text-align:center;justify-content:center;}
+  .nav-toggle{display:block;}
+  .nav-brand .tagline{display:none;}
+  .notice-grid,.checklist-grid,.pitfall-grid,.res-grid{grid-template-columns:1fr;}
+  .section-header{min-height:38vh;padding:5rem 1.6rem 3.5rem;}
+  .section-header h2{max-width:none;}
+  .stats-inner{grid-template-columns:1fr 1fr;}
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;}
+  .reveal{opacity:1;transform:none;transition:none;}
+  html{scroll-behavior:auto;}
 }
 
 /* ===== PRINT ===== */
-@media print {
-  .site-nav, .hero-scroll, .step-expand, .nav-toggle { display:none; }
-  .dark-section { background:#0E3542 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
-  .dark-section::before { display:none; }
-  .step-detail, .faq-a { display:block !important; }
-  body { font-size:11pt; }
+@media print{
+  .site-nav,.hero-scroll,.step-expand,.nav-toggle,.scroll-progress,#review-root{display:none!important;}
+  .dark-section{background:#0E3542!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .dark-section::before{display:none;}
+  #hero::after{display:none;}
+  .step-detail,.faq-a{display:block!important;}
+  .reveal{opacity:1!important;transform:none!important;}
+  body{font-size:11pt;}
 }
+
 </style>
 </head>
 <body>
 
-<!-- ===== NAVIGATION ===== -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ===== NAV ===== -->
 <nav class="site-nav">
   <div class="nav-inner">
-    <a href="#hero" class="nav-brand">Inform <em>Surveying</em></a>
+    <a href="#hero" class="nav-brand">
+      <img src="assets/img/logo-amber.png" alt="Inform Surveying">
+      <span class="tagline">Party Wall Guide</span>
+    </a>
     <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links">
       <a href="#notices" class="nav-link" data-section="notices">Notices</a>
       <a href="#bo-process" class="nav-link" data-section="bo-process">Building Owner</a>
-      <a href="#response" class="nav-link" data-section="response">Response</a>
       <a href="#ao-process" class="nav-link" data-section="ao-process">Adjoining Owner</a>
+      <a href="#pitfalls" class="nav-link" data-section="pitfalls">Pitfalls</a>
       <a href="#faq" class="nav-link" data-section="faq">FAQ</a>
-      <a href="#checklist" class="nav-link" data-section="checklist">Checklist</a>
+      <a href="#resources" class="nav-link" data-section="resources">Resources</a>
+      <a href="#contact" class="nav-link nav-cta">Talk to us</a>
     </div>
   </div>
 </nav>
 
 <!-- ===== HERO ===== -->
-<section id="hero" class="dark-section" data-photo="Wide dramatic construction/scaffolding shot">
+<section id="hero" class="dark-section" data-rid="hero" data-rlabel="Hero" style="background-image:url('assets/img/hero-partywall-dusk.jpg')">
   <div class="section-inner">
     <div class="hero-content">
       <div class="hero-tag">Inform Surveying Limited</div>
-      <h1 class="hero-title">
-        Party Wall<span>Process Guide</span>
-      </h1>
+      <h1 class="hero-title">The Party Wall<span>Process, Made Clear</span></h1>
       <p class="hero-sub">
-        Your comprehensive guide to the Party Wall etc. Act 1996 — timescales, responsibilities and what to expect at every stage.
+        A plain-English guide to the Party Wall etc. Act 1996 — the notices, the timescales, your responsibilities, and the pitfalls that catch owners out. Written by Chartered Building Surveyors.
       </p>
+      <div class="hero-actions">
+        <a href="#start" class="btn btn-primary">Start the guide</a>
+        <a href="#pitfalls" class="btn btn-outline">Avoid the pitfalls</a>
+      </div>
       <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="num">1996</div>
-          <div class="label">Act Established</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">3</div>
-          <div class="label">Notice Types</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">14</div>
-          <div class="label">Day Response Period</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">12mo</div>
-          <div class="label">Notice Validity</div>
-        </div>
+        <div class="hero-stat"><div class="num">2 mo</div><div class="label">Longest notice period</div></div>
+        <div class="hero-stat"><div class="num">14 days</div><div class="label">To respond</div></div>
+        <div class="hero-stat"><div class="num">12 mo</div><div class="label">Notice validity</div></div>
+        <div class="hero-stat"><div class="num">~3 mo</div><div class="label">Lead time to allow</div></div>
       </div>
     </div>
   </div>
-  <div class="hero-scroll">
-    <span>Scroll to explore</span>
-    <div class="arrow"></div>
+  <div class="hero-scroll"><span>Scroll to explore</span><div class="arrow"></div></div>
+</section>
+
+<!-- ===== PATH SELECTOR ===== -->
+<section id="start" class="path-section" data-rid="start" data-rlabel="Start — which are you?">
+  <div class="path-inner">
+    <div class="path-eyebrow reveal">Start here</div>
+    <h2 class="path-head reveal">Which side of the wall are you on?</h2>
+    <p class="path-intro reveal">The Act gives both sides rights and duties. Pick the route that fits your situation — you can read the other side too.</p>
+    <div class="path-grid">
+      <a href="#bo-process" class="path-card reveal">
+        <div class="pc-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/></svg>
+        </div>
+        <h3>I'm planning works</h3>
+        <p>You're the <strong>Building Owner</strong> — extending, converting a loft, underpinning, or digging near next door. You serve the notices.</p>
+        <span class="pc-go">See the building owner process
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+      </a>
+      <a href="#ao-process" class="path-card reveal">
+        <div class="pc-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 4l9 6.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9 20v-5h6v5"/></svg>
+        </div>
+        <h3>I've had a notice</h3>
+        <p>You're the <strong>Adjoining Owner</strong> — your neighbour's works could affect your property. The Act protects you, at no cost to you.</p>
+        <span class="pc-go">See the adjoining owner process
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+      </a>
+    </div>
   </div>
 </section>
 
-
-<!-- =============================================== -->
-<!-- SECTION 01 — NOTICE TYPES                       -->
-<!-- =============================================== -->
-<section id="s-notices" class="dark-section section-header" data-photo="Close-up of party wall / brickwork detail">
+<!-- ===== SECTION 01 — NOTICES ===== -->
+<section id="s-notices" class="dark-section section-header" data-rid="s-notices" data-rlabel="Notices divider" style="background-image:url('assets/img/boundary-gable-wall.jpg')">
   <div class="section-inner">
     <div>
       <div class="section-label">Section 01</div>
-      <h2>Understanding the <em>Notice Types</em></h2>
-      <p>The Act requires formal written notice before any notifiable work begins. The type of notice depends on what you're planning to do.</p>
+      <h2>The Three <em>Notice Types</em></h2>
+      <p>Formal written notice is required before any notifiable work begins. The type depends on what you're planning to do.</p>
     </div>
     <div class="section-num" aria-hidden="true">01</div>
   </div>
 </section>
 
-<section id="notices" class="light-section">
+<section id="notices" class="light-section" data-rid="notices" data-rlabel="Notice cards">
   <div class="light-inner">
     <div class="notice-grid">
 
-      <div class="notice-card" data-section="Section 1">
+      <div class="notice-card reveal">
+        <div class="nc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
+        <span class="nc-badge">Section 1 &amp; 2</span>
         <h4>Party Structure Notice</h4>
-        <p>For work directly to an existing party wall or structure shared with your neighbour. This includes:</p>
+        <p>For work directly to a wall or structure shared with your neighbour:</p>
         <ul>
-          <li>Cutting into a party wall for beam insertion</li>
-          <li>Raising a party wall or party fence wall</li>
-          <li>Demolishing and rebuilding a party wall</li>
+          <li>Cutting into a party wall to insert a beam</li>
+          <li>Raising or rebuilding a party wall</li>
           <li>Underpinning a party wall</li>
-          <li>Cutting away projections (e.g. chimney breasts)</li>
+          <li>Removing chimney breasts or projections</li>
         </ul>
-        <div class="notice-time">&#9200; Minimum 2 months before starting works</div>
+        <div class="notice-time"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> Minimum 2 months before works</div>
       </div>
 
-      <div class="notice-card" data-section="Section 6">
+      <div class="notice-card reveal">
+        <div class="nc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M3 21V10l6-3v14"/><path d="M9 7l6-3v17"/><path d="M21 21V12l-6-2"/></svg></div>
+        <span class="nc-badge">Section 6</span>
         <h4>Adjacent Excavation Notice</h4>
-        <p>Required when excavating near a neighbouring building's foundations. There are two trigger distances:</p>
+        <p>Required when excavating near a neighbour's foundations. Two trigger distances:</p>
         <ul>
-          <li><strong>Within 3 metres:</strong> Any excavation lower than the neighbour's foundations (Section 6(1))</li>
-          <li><strong>Within 6 metres:</strong> Excavation that would cut a 45-degree line drawn from the bottom of the neighbour's foundations (Section 6(2))</li>
+          <li><strong>Within 3 m</strong> — any excavation lower than their foundations (S.6(1))</li>
+          <li><strong>Within 6 m</strong> — excavation cutting a 45° line down from their foundations (S.6(2))</li>
         </ul>
-        <div class="notice-time">&#9200; Minimum 1 month before starting works</div>
+        <div class="notice-time"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> Minimum 1 month before works</div>
       </div>
 
-      <div class="notice-card" data-section="Section 2">
+      <div class="notice-card reveal">
+        <div class="nc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7h14M5 12h14M5 17h14" opacity=".5"/></svg></div>
+        <span class="nc-badge">Section 1</span>
         <h4>Line of Junction Notice</h4>
-        <p>For building a new wall at or astride the boundary line with your neighbour. This covers:</p>
+        <p>For building a new wall at or astride the boundary line:</p>
         <ul>
-          <li>New walls built up to the boundary line</li>
-          <li>New walls built astride the boundary (requires neighbour's written consent)</li>
-          <li>Typically arises with extensions or new-build boundary walls</li>
+          <li>A new wall built up to the boundary line</li>
+          <li>A new wall astride the boundary (needs written consent)</li>
+          <li>Common with extensions and new boundary walls</li>
         </ul>
-        <div class="notice-time">&#9200; Minimum 1 month before starting works</div>
+        <div class="notice-time"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> Minimum 1 month before works</div>
       </div>
 
     </div>
   </div>
 </section>
 
-
-<!-- ===== KEY NUMBERS BAR ===== -->
-<div class="stats-bar">
+<!-- ===== STATS BAR ===== -->
+<div class="stats-bar" data-rid="stats" data-rlabel="Key numbers bar">
   <div class="stats-inner">
-    <div class="stat-item">
-      <div class="stat-num">2mo</div>
-      <div class="stat-label">Section 1 Notice Period</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">1mo</div>
-      <div class="stat-label">Section 2 &amp; 6 Notice</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">14d</div>
-      <div class="stat-label">Response Window</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">12mo</div>
-      <div class="stat-label">Notice Validity</div>
-    </div>
+    <div class="stat-item reveal"><div class="stat-num">2 mo</div><div class="stat-label">Party Structure notice</div></div>
+    <div class="stat-item reveal"><div class="stat-num">1 mo</div><div class="stat-label">Line of junction &amp; excavation</div></div>
+    <div class="stat-item reveal"><div class="stat-num">14 d</div><div class="stat-label">Response window</div></div>
+    <div class="stat-item reveal"><div class="stat-num">12 mo</div><div class="stat-label">Notice validity</div></div>
   </div>
 </div>
 
-
-<!-- =============================================== -->
-<!-- SECTION 02 — BUILDING OWNER PROCESS             -->
-<!-- =============================================== -->
-<section id="s-bo" class="dark-section section-header" data-photo="Scaffolding or extension build in progress">
+<!-- ===== SECTION 02 — BUILDING OWNER ===== -->
+<section id="s-bo" class="dark-section section-header" data-rid="s-bo" data-rlabel="Building Owner divider" style="background-image:url('assets/img/scaffold-build.jpg')">
   <div class="section-inner">
     <div>
       <div class="section-label">Section 02</div>
       <h2>Building Owner <em>Process</em></h2>
-      <p>The step-by-step process for building owners planning notifiable works — from initial notice through to completion.</p>
+      <p>The step-by-step route for owners planning notifiable works — from first checks through to completion.</p>
     </div>
     <div class="section-num" aria-hidden="true">02</div>
   </div>
 </section>
 
-<section id="bo-process" class="light-section">
+<section id="bo-process" class="light-section" data-rid="bo-process" data-rlabel="Building Owner steps">
   <div class="light-inner">
     <div class="steps-list">
 
-      <div class="step-item" onclick="this.classList.toggle('expanded'); this.querySelector('.step-detail').classList.toggle('open');">
-        <div class="step-num">01</div>
+      <div class="step-item reveal" onclick="this.classList.toggle('expanded');this.querySelector('.step-detail').classList.toggle('open');">
+        <div class="step-num">1</div>
         <div class="step-content">
-          <h4>Determine if Your Works are Notifiable</h4>
-          <div class="step-time">Before you begin</div>
-          <p>Not all building work requires party wall notification. Check whether your planned works trigger the Act.</p>
+          <h4>Check whether your works are notifiable</h4>
+          <span class="step-time">Before you begin</span>
+          <p>Not all building work triggers the Act. Confirm whether yours does before anything else.</p>
           <div class="step-detail">
-            <h5>Works that typically require notice</h5>
+            <h5>Usually notifiable</h5>
             <ul>
               <li>Loft conversions involving a party wall</li>
-              <li>Extensions within 3 or 6 metres of a neighbour's foundations</li>
+              <li>Extensions within 3 m or 6 m of a neighbour's foundations</li>
               <li>Inserting a steel beam into a party wall</li>
               <li>Removing a chimney breast from a party wall</li>
               <li>Underpinning shared foundations</li>
             </ul>
-            <h5>Works that usually don't require notice</h5>
+            <h5>Usually not notifiable</h5>
             <ul>
-              <li>Internal alterations not affecting the party wall</li>
-              <li>Drilling into a party wall (minor fixings)</li>
+              <li>Internal alterations away from the party wall</li>
+              <li>Minor fixings drilled into a party wall</li>
               <li>Plastering or decorating a party wall surface</li>
             </ul>
-            <p><strong>Tip:</strong> If in doubt, instruct a party wall surveyor for preliminary advice. Getting this wrong can delay your project significantly.</p>
+            <p>If in doubt, get preliminary advice. Getting this wrong is expensive to unwind.</p>
           </div>
           <div class="step-expand">Read more <span class="chevron">&#9654;</span></div>
         </div>
       </div>
 
-      <div class="step-item" onclick="this.classList.toggle('expanded'); this.querySelector('.step-detail').classList.toggle('open');">
-        <div class="step-num">02</div>
+      <div class="step-item reveal" onclick="this.classList.toggle('expanded');this.querySelector('.step-detail').classList.toggle('open');">
+        <div class="step-num">2</div>
         <div class="step-content">
-          <h4>Instruct a Party Wall Surveyor</h4>
-          <div class="step-time">Recommended: 2–3 months before works</div>
-          <p>Engage a qualified surveyor early. They'll confirm which notices are required and prepare them correctly.</p>
+          <h4>Get your design and structural detail settled first</h4>
+          <span class="step-time">2–3 months before works</span>
+          <p>Notices stand or fall on the drawings behind them. Settle the design — and the structural detail — before you serve anything.</p>
+          <div class="step-detail">
+            <h5>What needs to be in place</h5>
+            <ul>
+              <li>Scale drawings showing existing and proposed conditions</li>
+              <li>The boundary line clearly marked, with dimensions to it</li>
+              <li>Structural engineer's foundation and excavation detail</li>
+              <li>Cross-sections for any excavation, showing depth against the neighbour's foundations</li>
+            </ul>
+            <p>Instruct the structural engineer alongside the architect. Without the foundation detail, a valid Section 6 notice cannot be drafted — and this is one of the commonest causes of delay.</p>
+          </div>
+          <div class="step-expand">Read more <span class="chevron">&#9654;</span></div>
+        </div>
+      </div>
+
+      <div class="step-item reveal" onclick="this.classList.toggle('expanded');this.querySelector('.step-detail').classList.toggle('open');">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Instruct a party wall surveyor</h4>
+          <span class="step-time">Recommended: early</span>
+          <p>A surveyor confirms which notices apply, prepares them correctly, and steers the timescales.</p>
           <div class="step-detail">
             <h5>What a surveyor provides</h5>
             <ul>
               <li>Assessment of which notice types apply</li>
-              <li>Preparation and serving of formal notices</li>
+              <li>Preparation and service of valid notices</li>
               <li>Guidance on timescales and obligations</li>
-              <li>Schedule of Condition of adjoining properties</li>
-              <li>Party Wall Award if consent isn't given</li>
+              <li>Schedule of Condition of the adjoining property</li>
+              <li>The Party Wall Award if consent isn't given</li>
             </ul>
-            <p><strong>Important:</strong> The Building Owner is responsible for the reasonable costs of the Adjoining Owner's surveyor — this is a statutory obligation under Section 10(13) of the Act.</p>
+            <p>The Building Owner normally bears the reasonable costs of the Adjoining Owner's surveyor — a statutory point under Section 10 of the Act.</p>
           </div>
           <div class="step-expand">Read more <span class="chevron">&#9654;</span></div>
         </div>
       </div>
 
-      <div class="step-item" onclick="this.classList.toggle('expanded'); this.querySelector('.step-detail').classList.toggle('open');">
-        <div class="step-num">03</div>
+      <div class="step-item reveal" onclick="this.classList.toggle('expanded');this.querySelector('.step-detail').classList.toggle('open');">
+        <div class="step-num">4</div>
         <div class="step-content">
-          <h4>Serve the Party Wall Notice</h4>
-          <div class="step-time">2 months (S.1) or 1 month (S.2/S.6) before works</div>
-          <p>Formal written notice must be served on every affected adjoining owner. The notice must contain specific prescribed information.</p>
+          <h4>Serve the notice</h4>
+          <span class="step-time">2 months (S.1) or 1 month (S.2/S.6) ahead</span>
+          <p>Formal written notice goes to every affected adjoining owner, with the prescribed information.</p>
           <div class="step-detail">
-            <h5>Notice must include</h5>
+            <h5>A valid notice includes</h5>
             <ul>
-              <li>Your name and address (the Building Owner)</li>
-              <li>The nature and particulars of the proposed works</li>
-              <li>The date when works are proposed to begin</li>
+              <li>Your name and address as Building Owner</li>
+              <li>The nature and particulars of the works</li>
+              <li>The proposed start date</li>
               <li>Reference to the relevant section of the Act</li>
             </ul>
-            <h5>Methods of service</h5>
+            <h5>How to serve</h5>
             <ul>
-              <li>Hand delivery (recommended — retain proof)</li>
-              <li>Recorded delivery post</li>
-              <li>Left at the last known address</li>
+              <li>By hand (keep proof)</li>
+              <li>By recorded delivery</li>
+              <li>Left at, or posted to, the last known address</li>
             </ul>
-            <p>A notice remains valid for 12 months from its stated commencement date. After that, a fresh notice is required.</p>
+            <p>A notice stays valid for 12 months from its stated start date. After that, you must serve afresh.</p>
           </div>
           <div class="step-expand">Read more <span class="chevron">&#9654;</span></div>
         </div>
       </div>
 
-      <div class="step-item" onclick="this.classList.toggle('expanded'); this.querySelector('.step-detail').classList.toggle('open');">
-        <div class="step-num">04</div>
+      <div class="step-item reveal" onclick="this.classList.toggle('expanded');this.querySelector('.step-detail').classList.toggle('open');">
+        <div class="step-num">5</div>
         <div class="step-content">
-          <h4>Wait for the Adjoining Owner's Response</h4>
-          <div class="step-time">14-day response period</div>
-          <p>The Adjoining Owner has 14 days from receiving the notice to respond. There are three possible outcomes.</p>
+          <h4>Wait for the response</h4>
+          <span class="step-time">14-day response period</span>
+          <p>The Adjoining Owner has 14 days to respond. Three outcomes are possible — consent, dissent, or silence.</p>
           <div class="step-detail">
-            <h5>Possible responses</h5>
+            <h5>The three outcomes</h5>
             <ul>
-              <li><strong>Consent:</strong> Works can proceed without an Award. Record the consent in writing.</li>
-              <li><strong>Dissent:</strong> A dispute is deemed to have arisen. Surveyors must be appointed to resolve it via a Party Wall Award.</li>
-              <li><strong>No response:</strong> After 14 days, a dispute is deemed to have arisen by default. The process continues as if they dissented.</li>
+              <li><strong>Consent:</strong> works can proceed once the notice period expires. Record it in writing.</li>
+              <li><strong>Dissent:</strong> a dispute is deemed to have arisen. Surveyors are appointed and an Award follows.</li>
+              <li><strong>No response:</strong> after 14 days a dispute is deemed to have arisen. You can't appoint a surveyor on their behalf yet — you must first serve a written request giving a further 10 days to appoint. Only then, if they still don't, can you appoint for them (Section 10(4)). Allow for this in the programme.</li>
             </ul>
-            <p>The Building Owner cannot start notifiable works until either consent is received in writing or a Party Wall Award has been made and served.</p>
+            <p>You cannot start notifiable works until you have written consent, or an Award has been made and served.</p>
           </div>
           <div class="step-expand">Read more <span class="chevron">&#9654;</span></div>
         </div>
       </div>
 
-      <div class="step-item" onclick="this.classList.toggle('expanded'); this.querySelector('.step-detail').classList.toggle('open');">
-        <div class="step-num">05</div>
+      <div class="step-item reveal" onclick="this.classList.toggle('expanded');this.querySelector('.step-detail').classList.toggle('open');">
+        <div class="step-num">6</div>
         <div class="step-content">
-          <h4>Party Wall Award &amp; Schedule of Condition</h4>
-          <div class="step-time">Typically 4–8 weeks</div>
-          <p>If a dispute arises, surveyors prepare a Party Wall Award that governs how the works must be carried out.</p>
+          <h4>Award, Schedule of Condition, then build</h4>
+          <span class="step-time">Award typically 4–8 weeks</span>
+          <p>If a dispute arises, the surveyors prepare an Award governing how the works are carried out. A Schedule of Condition records the adjoining property first.</p>
           <div class="step-detail">
-            <h5>The Award typically includes</h5>
+            <h5>The Award usually covers</h5>
             <ul>
-              <li>Detailed description of the permitted works</li>
-              <li>Schedule of Condition — photographic record of the adjoining property before works begin</li>
+              <li>A description of the permitted works</li>
+              <li>The Schedule of Condition (photographic record taken before works)</li>
               <li>Working hours and access arrangements</li>
-              <li>Requirements for protection and making good</li>
-              <li>Costs allocation (usually borne by the Building Owner)</li>
+              <li>Protection and making good</li>
+              <li>How costs are allocated</li>
             </ul>
-            <p>Either party has 14 days from service of the Award to appeal to the County Court. If no appeal is made, the Award is binding.</p>
-          </div>
-          <div class="step-expand">Read more <span class="chevron">&#9654;</span></div>
-        </div>
-      </div>
-
-      <div class="step-item" onclick="this.classList.toggle('expanded'); this.querySelector('.step-detail').classList.toggle('open');">
-        <div class="step-num">06</div>
-        <div class="step-content">
-          <h4>Commence Works &amp; Comply with the Award</h4>
-          <div class="step-time">Duration of construction</div>
-          <p>Once consent is received or an Award has been served (and the appeal period has passed), works can begin.</p>
-          <div class="step-detail">
-            <h5>Obligations during works</h5>
-            <ul>
-              <li>Comply strictly with the terms of the Award</li>
-              <li>Minimise inconvenience to the Adjoining Owner</li>
-              <li>Allow the Adjoining Owner's surveyor reasonable access to inspect</li>
-              <li>Make good any damage caused by the works (Section 7(2))</li>
-              <li>Maintain adequate insurance</li>
-            </ul>
-            <p>If damage occurs to the adjoining property, the Building Owner is liable to make good unless the Award states otherwise.</p>
+            <p>Either party has 14 days from service to appeal to the County Court. Once that passes, the Award is binding and works can begin — strictly in line with it.</p>
           </div>
           <div class="step-expand">Read more <span class="chevron">&#9654;</span></div>
         </div>
@@ -741,369 +609,556 @@ body { font-family:'Open Sans',sans-serif; color:var(--body); line-height:1.75; 
   </div>
 </section>
 
+<!-- ===== RESPONSE OUTCOMES ===== -->
+<section id="response" class="light-section alt" data-rid="response" data-rlabel="Response outcomes">
+  <div class="light-inner">
+    <div class="lead-in reveal">
+      <span class="li-label">After the notice</span>
+      <h3>What happens in the next 14 days</h3>
+      <p>How the Adjoining Owner responds within the window decides which way the process turns.</p>
+    </div>
+    <div class="branch-grid">
+      <div class="branch-card consent reveal">
+        <div class="branch-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h4>Consent given</h4>
+        <p>The Adjoining Owner agrees in writing. No Award is needed. Works may proceed once the notice period expires. Keep the written consent safe.</p>
+        <div class="result">Works proceed — no Award</div>
+      </div>
+      <div class="branch-card dissent reveal">
+        <div class="branch-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></div>
+        <h4>Dissent (a dispute)</h4>
+        <p>The neighbour wants safeguards. A dispute is deemed to arise. Each side appoints a surveyor, or both agree a single Agreed Surveyor, who prepare the Award.</p>
+        <div class="result">Surveyors appointed — Award prepared</div>
+      </div>
+      <div class="branch-card noresponse reveal">
+        <div class="branch-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.5 1.5c0 1.7-2.5 2-2.5 3.5"/><path d="M12 17h.01"/></svg></div>
+        <h4>No response (14 days)</h4>
+        <p>Silence counts as a deemed dispute — but you can't appoint for them straight away. The Building Owner must first serve a written request giving a further <strong>10 days</strong> to appoint a surveyor. Only if they still don't can a surveyor be appointed on their behalf (Section 10(4)).</p>
+        <div class="result">Deemed dispute — 10-day request, then appoint</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- =============================================== -->
-<!-- SECTION 03 — RESPONSE OUTCOMES                  -->
-<!-- =============================================== -->
-<section id="s-response" class="dark-section section-header" data-photo="Two neighbouring houses / terrace row">
+<!-- ===== SECTION 03 — ADJOINING OWNER ===== -->
+<section id="s-ao" class="dark-section section-header" data-rid="s-ao" data-rlabel="Adjoining Owner divider" style="background-image:url('assets/img/boundary-gardens.jpg')">
   <div class="section-inner">
     <div>
       <div class="section-label">Section 03</div>
-      <h2>Response <em>Outcomes</em></h2>
-      <p>What happens after a notice is served depends on how the Adjoining Owner responds within the 14-day window.</p>
+      <h2>Adjoining Owner <em>Process</em></h2>
+      <p>Received a notice? Here's what it means and what to do. Your property is protected, normally at no cost to you.</p>
     </div>
     <div class="section-num" aria-hidden="true">03</div>
   </div>
 </section>
 
-<section id="response" class="light-section">
+<section id="ao-process" class="light-section" data-rid="ao-process" data-rlabel="Adjoining Owner steps">
   <div class="light-inner">
-    <div class="branch-grid">
+    <div class="steps-list">
 
-      <div class="branch-card consent">
-        <div class="branch-icon">&#10003;</div>
-        <h4>Consent Given</h4>
-        <p>The Adjoining Owner agrees to the proposed works in writing. No Award is needed. Works may proceed after the statutory notice period expires. Record the written consent carefully.</p>
-        <div class="result">&#8594; Works proceed — no Award required</div>
+      <div class="step-item reveal" onclick="this.classList.toggle('expanded');this.querySelector('.step-detail').classList.toggle('open');">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Read the notice carefully</h4>
+          <span class="step-time">Day 0 — notice received</span>
+          <p>It should name the Building Owner, describe the works, reference the right section, and give a proposed start date.</p>
+          <div class="step-detail">
+            <h5>What to check</h5>
+            <ul>
+              <li>Is it correctly addressed to you?</li>
+              <li>Does it describe the works clearly?</li>
+              <li>Is it the correct section (1, 2 or 6)?</li>
+              <li>Is the start date realistic given the notice period?</li>
+            </ul>
+            <p>If anything is unclear, take advice before you respond.</p>
+          </div>
+          <div class="step-expand">Read more <span class="chevron">&#9654;</span></div>
+        </div>
       </div>
 
-      <div class="branch-card dissent">
-        <div class="branch-icon">&#10007;</div>
-        <h4>Dissent (Dispute)</h4>
-        <p>The Adjoining Owner disagrees or wants safeguards. A dispute is deemed to have arisen. Each party appoints a surveyor (or agrees on a single Agreed Surveyor). The surveyors prepare a Party Wall Award.</p>
-        <div class="result">&#8594; Surveyors appointed — Award prepared</div>
+      <div class="step-item reveal" onclick="this.classList.toggle('expanded');this.querySelector('.step-detail').classList.toggle('open');">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Decide: consent or dissent</h4>
+          <span class="step-time">Within 14 days</span>
+          <p>Consent and the works proceed without an Award. Dissent and the surveyor process begins. Dissenting is common — and sensible.</p>
+          <div class="step-detail">
+            <h5>You might consent if</h5>
+            <ul>
+              <li>The works are minor and won't affect you</li>
+              <li>You trust the owner and their contractor</li>
+              <li>You want to keep things neighbourly</li>
+            </ul>
+            <h5>You might dissent if</h5>
+            <ul>
+              <li>You want a Schedule of Condition for protection</li>
+              <li>The works are significant</li>
+              <li>You want enforceable terms on hours, access and making good</li>
+              <li>You want professional oversight</li>
+            </ul>
+            <p>Dissenting does <strong>not</strong> stop the works. It puts proper safeguards in place.</p>
+          </div>
+          <div class="step-expand">Read more <span class="chevron">&#9654;</span></div>
+        </div>
       </div>
 
-      <div class="branch-card noresponse">
-        <div class="branch-icon">?</div>
-        <h4>No Response (14 days)</h4>
-        <p>If no response is received within 14 days, a dispute is deemed to have arisen automatically. The Building Owner may appoint a surveyor on behalf of the Adjoining Owner (Section 10(4)(b)).</p>
-        <div class="result">&#8594; Deemed dispute — surveyor appointed</div>
+      <div class="step-item reveal" onclick="this.classList.toggle('expanded');this.querySelector('.step-detail').classList.toggle('open');">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Appoint your surveyor</h4>
+          <span class="step-time">Within 10 days of dissent</span>
+          <p>Appoint promptly. If you don't, the Building Owner can appoint one on your behalf under Section 10(4).</p>
+          <div class="step-detail">
+            <h5>Your surveyor's role</h5>
+            <ul>
+              <li>Acts impartially to resolve the dispute, not as your advocate</li>
+              <li>Inspects your property and prepares a Schedule of Condition</li>
+              <li>Negotiates the terms of the Award</li>
+              <li>Makes sure your property is protected</li>
+            </ul>
+            <p><strong>Cost:</strong> the Building Owner normally meets the reasonable fees of your surveyor. You shouldn't usually pay anything.</p>
+          </div>
+          <div class="step-expand">Read more <span class="chevron">&#9654;</span></div>
+        </div>
+      </div>
+
+      <div class="step-item reveal" onclick="this.classList.toggle('expanded');this.querySelector('.step-detail').classList.toggle('open');">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>Award served — and your right to appeal</h4>
+          <span class="step-time">14-day appeal window</span>
+          <p>Once agreed, the Award is served on both sides. You have 14 days to appeal to the County Court if you disagree with its terms.</p>
+          <div class="step-detail">
+            <h5>The Award gives you</h5>
+            <ul>
+              <li>A legal framework for how the works are done</li>
+              <li>A Schedule of Condition of your property</li>
+              <li>Provisions for making good any damage</li>
+              <li>Working-hours and access limits</li>
+              <li>Obligations on the Building Owner</li>
+            </ul>
+            <p>If damage occurs, the Schedule of Condition is your baseline evidence for a claim.</p>
+          </div>
+          <div class="step-expand">Read more <span class="chevron">&#9654;</span></div>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
-
-<!-- =============================================== -->
-<!-- SECTION 04 — ADJOINING OWNER PROCESS            -->
-<!-- =============================================== -->
-<section id="s-ao" class="dark-section section-header" data-photo="Residential street / period properties">
+<!-- ===== SECTION 04 — COMMON PITFALLS ===== -->
+<section id="s-pitfalls" class="dark-section section-header" data-rid="s-pitfalls" data-rlabel="Pitfalls divider" style="background-image:url('assets/img/site-clearance-dusk.jpg')">
   <div class="section-inner">
     <div>
       <div class="section-label">Section 04</div>
-      <h2>Adjoining Owner <em>Process</em></h2>
-      <p>If you've received a party wall notice, here's what you need to know and do — your rights are protected by the Act.</p>
+      <h2>Common <em>Pitfalls</em></h2>
+      <p>The mistakes that cost owners time and money — drawn from what we see on real jobs. Read these before you serve anything.</p>
     </div>
     <div class="section-num" aria-hidden="true">04</div>
   </div>
 </section>
 
-<section id="ao-process" class="light-section">
+<section id="pitfalls" class="light-section alt" data-rid="pitfalls" data-rlabel="Pitfalls — intro + access callout">
   <div class="light-inner">
-    <div class="steps-list">
 
-      <div class="step-item" onclick="this.classList.toggle('expanded'); this.querySelector('.step-detail').classList.toggle('open');">
-        <div class="step-num">01</div>
-        <div class="step-content">
-          <h4>Receive and Review the Notice</h4>
-          <div class="step-time">Day 0 — notice received</div>
-          <p>Check the notice carefully. It should identify the Building Owner, describe the proposed works, reference the relevant section of the Act, and state a proposed start date.</p>
-          <div class="step-detail">
-            <h5>What to check</h5>
-            <ul>
-              <li>Is the notice properly addressed to you?</li>
-              <li>Does it describe the works clearly?</li>
-              <li>Is it referencing the correct section (1, 2, or 6)?</li>
-              <li>Is the proposed start date realistic given the notice period?</li>
-            </ul>
-            <p>If anything is unclear or seems incorrect, seek advice from a party wall surveyor before responding.</p>
-          </div>
-          <div class="step-expand">Read more <span class="chevron">&#9654;</span></div>
+    <div class="pitfall-intro">
+      <div class="reveal">
+        <div class="lead-in" style="margin-bottom:1.4rem;">
+          <span class="li-label">Why this matters</span>
+          <h3>Most party wall delays are self-inflicted</h3>
         </div>
+        <p>Few disputes are really about the building work. Far more often, the project stalls because the notice was served too early, on incomplete drawings, with no idea where the boundary runs — or because nobody allowed for the statutory clock. Every one of these is avoidable. Here are the nine we see most.</p>
+      </div>
+      <figure class="pi-figure reveal">
+        <img src="assets/img/crack-brickwork.jpg" alt="Cracking to brickwork — the kind of pre-existing condition a Schedule of Condition records before works begin">
+        <figcaption>A Schedule of Condition records cracks like this <em>before</em> works begin — your evidence baseline.</figcaption>
+      </figure>
+    </div>
+
+    <!-- ACCESS CALLOUT -->
+    <div class="access-callout reveal" data-rid="access" data-rlabel="No automatic right of access callout">
+      <div class="access-figure" style="background-image:url('assets/img/alley-two-walls.jpg')"></div>
+      <div class="access-body">
+        <span class="ac-flag">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.6 2 18a2 2 0 0 0 1.7 3h16.6a2 2 0 0 0 1.7-3L13.7 3.6a2 2 0 0 0-3.4 0z"/></svg>
+          Read this before you design
+        </span>
+        <h3>There is no automatic right to go onto your neighbour's land</h3>
+        <p>Owners often assume they — or their builder — can simply step next door to put up scaffold, render the new flank wall, or dig. <strong>You can't.</strong> Going onto a neighbour's land without permission or a legal right is trespass.</p>
+        <ul class="access-points">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Party Wall Act, Section 8:</strong> grants access for the notified works — but only once an Award is in place, and with 14 days' notice.</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Access to Neighbouring Land Act 1992:</strong> only helps for works reasonably necessary to <em>preserve</em> your property — not extensions or improvements — and needs a court order if refused.</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Design it out:</strong> wherever you can, design so the works are built entirely from your own land. Where access is genuinely needed, secure it through the Award or by agreement before you commit.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PITFALL CARDS -->
+    <div class="pitfall-grid" data-rid="pitfall-grid" data-rlabel="Pitfall cards (8)">
+
+      <div class="pitfall-card reveal">
+        <div class="pf-top"><span class="pf-num">1</span><span class="pf-sev crit">Project-stopping</span></div>
+        <h4>"We've got planning — let's start"</h4>
+        <p class="pf-quote">Planning and party wall are entirely separate.</p>
+        <p>Planning decides <em>whether</em> you can build. The Party Wall Act governs <em>how</em> the works affect your neighbour. Starting notifiable works without an agreement is a breach — your neighbour can get a court injunction to stop you within days, plus costs.</p>
+        <div class="pf-fix"><strong>Do this instead</strong>Run the party wall process as a parallel workstream that must finish before a spade goes in.</div>
       </div>
 
-      <div class="step-item" onclick="this.classList.toggle('expanded'); this.querySelector('.step-detail').classList.toggle('open');">
-        <div class="step-num">02</div>
-        <div class="step-content">
-          <h4>Decide: Consent or Dissent</h4>
-          <div class="step-time">Within 14 days</div>
-          <p>You have 14 days to respond. You can give written consent (works proceed without an Award) or dissent (triggering the surveyor appointment process).</p>
-          <div class="step-detail">
-            <h5>Reasons you might consent</h5>
-            <ul>
-              <li>The works are minor and won't affect your property</li>
-              <li>You trust the Building Owner and their contractor</li>
-              <li>You want to maintain a good neighbourly relationship</li>
-            </ul>
-            <h5>Reasons you might dissent</h5>
-            <ul>
-              <li>You want a formal Schedule of Condition for protection</li>
-              <li>The works are significant and could affect your property</li>
-              <li>You want enforceable terms governing working hours, access, and making good</li>
-              <li>You want professional oversight of the works</li>
-            </ul>
-            <p><strong>Important:</strong> Dissenting does NOT prevent the works from going ahead. It simply ensures proper legal safeguards are in place.</p>
-          </div>
-          <div class="step-expand">Read more <span class="chevron">&#9654;</span></div>
-        </div>
+      <div class="pitfall-card reveal">
+        <div class="pf-top"><span class="pf-num">2</span><span class="pf-sev crit">Project-stopping</span></div>
+        <h4>Leaving no time for the statutory clock</h4>
+        <p class="pf-quote">The periods are fixed — they can't be shortened.</p>
+        <p>Two months for a Party Structure notice, one month for line-of-junction or excavation, a 14-day response window, then 4–8 weeks to agree an Award if there's a dispute. None of it can be rushed, however urgent the build.</p>
+        <div class="pf-fix"><strong>Do this instead</strong>Start the party wall process around three months before your intended start date.</div>
       </div>
 
-      <div class="step-item" onclick="this.classList.toggle('expanded'); this.querySelector('.step-detail').classList.toggle('open');">
-        <div class="step-num">03</div>
-        <div class="step-content">
-          <h4>Appoint Your Surveyor</h4>
-          <div class="step-time">Within 10 days of dissent</div>
-          <p>If you dissent, you should appoint a surveyor within 10 days. If you don't, the Building Owner may appoint one on your behalf under Section 10(4)(b).</p>
-          <div class="step-detail">
-            <h5>Your surveyor's role</h5>
-            <ul>
-              <li>Acts impartially to resolve the dispute (not as your advocate)</li>
-              <li>Inspects your property and prepares a Schedule of Condition</li>
-              <li>Negotiates the terms of the Party Wall Award</li>
-              <li>Ensures your property is protected during the works</li>
-            </ul>
-            <p><strong>Costs:</strong> The Building Owner is generally responsible for the reasonable fees of the Adjoining Owner's surveyor. You should not normally need to pay anything.</p>
-          </div>
-          <div class="step-expand">Read more <span class="chevron">&#9654;</span></div>
-        </div>
+      <div class="pitfall-card reveal">
+        <div class="pf-top"><span class="pf-num">3</span><span class="pf-sev high">High risk</span></div>
+        <h4>Serving on half-finished drawings</h4>
+        <p class="pf-quote">A vague notice is an invalid notice.</p>
+        <p>Drawings must be to scale and show existing and proposed conditions; excavation needs cross-sections showing depth against the neighbour's foundations. Serve on sketches and the notice gets challenged — and if the design then changes, the notice falls away and the clock resets.</p>
+        <div class="pf-fix"><strong>Do this instead</strong>Finalise and check the drawings before serving. Don't serve to "save time" on a moving design.</div>
       </div>
 
-      <div class="step-item" onclick="this.classList.toggle('expanded'); this.querySelector('.step-detail').classList.toggle('open');">
-        <div class="step-num">04</div>
-        <div class="step-content">
-          <h4>Award Served &amp; Right of Appeal</h4>
-          <div class="step-time">14-day appeal window</div>
-          <p>Once the surveyors agree the Award, it is served on both parties. You have 14 days to appeal to the County Court if you disagree with any of its terms.</p>
-          <div class="step-detail">
-            <h5>What the Award provides</h5>
-            <ul>
-              <li>Legal framework governing how works are carried out</li>
-              <li>Schedule of Condition of your property</li>
-              <li>Provisions for making good any damage</li>
-              <li>Working hours and access restrictions</li>
-              <li>Obligations on the Building Owner</li>
-            </ul>
-            <p>If damage occurs during the works, the Schedule of Condition provides the baseline evidence for any claim.</p>
-          </div>
-          <div class="step-expand">Read more <span class="chevron">&#9654;</span></div>
-        </div>
+      <div class="pitfall-card reveal">
+        <div class="pf-top"><span class="pf-num">4</span><span class="pf-sev high">High risk</span></div>
+        <h4>No structural engineer, no foundation detail</h4>
+        <p class="pf-quote">No detail means no valid notice.</p>
+        <p>If the structural engineer isn't instructed early, there's no foundation design, no excavation depths and no temporary-works detail. A Section 6 notice can't be drafted without it — and structural design itself takes weeks.</p>
+        <div class="pf-fix"><strong>Do this instead</strong>Instruct the engineer alongside the architect. Their detail is an input to the notice, not an afterthought.</div>
+      </div>
+
+      <div class="pitfall-card reveal">
+        <div class="pf-top"><span class="pf-num">5</span><span class="pf-sev high">High risk</span></div>
+        <h4>"I'm not sure where my boundary is"</h4>
+        <p class="pf-quote">The title plan shows general boundaries, not the exact line.</p>
+        <p>Many owners don't know precisely where the boundary runs, which wall or fence they own, or what they're responsible for. You can't serve the right notice — on the right people — if you don't know that.</p>
+        <div class="pf-fix"><strong>Do this instead</strong>Establish the boundary and ownership early, from the deeds, title plan and a surveyor's view.</div>
+      </div>
+
+      <div class="pitfall-card reveal">
+        <div class="pf-top"><span class="pf-num">6</span><span class="pf-sev med">Causes delay</span></div>
+        <h4>Drawings with no boundary marked</h4>
+        <p class="pf-quote">If the line isn't drawn, nobody can assess it.</p>
+        <p>Plans that don't show the boundary make it impossible to see what's built up to it, astride it, or how close excavation comes. The result is queries, back-and-forth and lost weeks.</p>
+        <div class="pf-fix"><strong>Do this instead</strong>Insist the boundary line is on every relevant plan and section, dimensioned.</div>
+      </div>
+
+      <div class="pitfall-card reveal">
+        <div class="pf-top"><span class="pf-num">7</span><span class="pf-sev med">Causes delay</span></div>
+        <h4>"My neighbour will just agree"</h4>
+        <p class="pf-quote">Plan for dissent as the default.</p>
+        <p>Even reasonable neighbours often dissent — usually to secure a Schedule of Condition and enforceable terms, which is sensible, not hostile. A dissent (or silence) triggers surveyors and an Award: weeks you didn't budget for.</p>
+        <div class="pf-fix"><strong>Do this instead</strong>Talk to your neighbour early and informally — it helps — but never bank on consent.</div>
+      </div>
+
+      <div class="pitfall-card reveal">
+        <div class="pf-top"><span class="pf-num">8</span><span class="pf-sev crit">Project-stopping</span></div>
+        <h4>Assuming you can work from next door</h4>
+        <p class="pf-quote">There's no automatic right of access — see the red panel above.</p>
+        <p>Scaffolding over the boundary, rendering the new wall, or digging from the neighbour's side all need a legal right. Section 8 access only exists once an Award is in place; the 1992 Act only covers preservation works.</p>
+        <div class="pf-fix"><strong>Do this instead</strong>Design so works are built from your own land, or secure access through the Award before you commit.</div>
+      </div>
+
+      <div class="pitfall-card reveal">
+        <div class="pf-top"><span class="pf-num">9</span><span class="pf-sev med">Sours goodwill</span></div>
+        <h4>Not bringing your neighbour with you</h4>
+        <p class="pf-quote">A notice landing cold rarely lands well.</p>
+        <p>Serving a formal notice with no word beforehand puts even reasonable neighbours on the back foot. A short, early conversation — showing you've thought about how the works affect them — protects the relationship. Skip it and you can turn a willing neighbour into an aggrieved one, or a neutral one into a hostile one.</p>
+        <div class="pf-fix"><strong>Do this instead</strong>Speak to your neighbour early, hear their concerns, and show a genuine effort to consider them before the notice arrives. Be neighbourly.</div>
       </div>
 
     </div>
   </div>
 </section>
 
-
-<!-- =============================================== -->
-<!-- SECTION 05 — FAQ                                -->
-<!-- =============================================== -->
-<section id="s-faq" class="dark-section section-header" data-photo="Architectural detail / surveyor measuring">
+<!-- ===== SECTION 05 — FAQ ===== -->
+<section id="s-faq" class="dark-section section-header" data-rid="s-faq" data-rlabel="FAQ divider" style="background-image:url('assets/img/tall-brick-wall.jpg')">
   <div class="section-inner">
     <div>
       <div class="section-label">Section 05</div>
       <h2>Frequently Asked <em>Questions</em></h2>
-      <p>Answers to the most common questions about the Party Wall etc. Act 1996, the process, costs, and your rights.</p>
+      <p>Straight answers to the questions we hear most — on process, costs, access and your rights.</p>
     </div>
     <div class="section-num" aria-hidden="true">05</div>
   </div>
 </section>
 
-<section id="faq" class="light-section">
+<section id="faq" class="light-section" data-rid="faq" data-rlabel="FAQ accordion">
   <div class="light-inner">
     <div class="faq-list">
 
-      <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          What is a party wall?
-          <span class="plus">+</span>
-        </button>
-        <div class="faq-a">A party wall is a wall that stands on the land of two or more owners and forms part of a building. It can also be a wall that stands on one owner's land but is used by two or more owners to separate their buildings (a party fence wall). The Party Wall etc. Act 1996 provides a framework for preventing and resolving disputes relating to party walls, boundary walls, and excavations near neighbouring buildings.</div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is a party wall?<span class="plus">+</span></button>
+        <div class="faq-a">A party wall stands on the land of two or more owners and forms part of a building. It can also be a wall standing on one owner's land but used by two owners to separate their buildings (a party fence wall). The Party Wall etc. Act 1996 provides a framework for preventing and resolving disputes about party walls, boundary walls and excavations near neighbouring buildings.</div>
       </div>
 
-      <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Do I need a party wall agreement for my extension?
-          <span class="plus">+</span>
-        </button>
-        <div class="faq-a">If your extension involves work to a party wall (e.g. cutting into it for a beam) or excavation within 3 or 6 metres of a neighbouring building's foundations, you will likely need to serve a party wall notice. Even if the extension doesn't touch the party wall directly, foundation excavation close to the boundary can trigger Section 6 of the Act. It's best to consult a party wall surveyor early in your project planning.</div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I go onto my neighbour's land to do the work?<span class="plus">+</span></button>
+        <div class="faq-a">Not automatically. There is no general right to enter a neighbour's land, and doing so without permission is trespass. The Party Wall Act (Section 8) grants access for the notified works, but only once an Award is in place and with at least 14 days' notice (one day in an emergency). The Access to Neighbouring Land Act 1992 can grant access for works reasonably necessary to <em>preserve</em> your property — not for extensions or improvements — and needs a court order if the neighbour refuses. Wherever possible, design the works so they can be built from your own land.</div>
       </div>
 
-      <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Who pays for the party wall surveyor?
-          <span class="plus">+</span>
-        </button>
-        <div class="faq-a">The Building Owner (the person carrying out the works) is generally responsible for the reasonable costs of the entire process, including the Adjoining Owner's surveyor's fees. This is a statutory obligation under Section 10(13) of the Act. The Adjoining Owner should not normally need to pay anything unless they are also carrying out notifiable works.</div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do I need planning permission as well as a party wall notice?<span class="plus">+</span></button>
+        <div class="faq-a">They are separate and run independently. You may need both. Planning deals with whether you can build; the Party Wall Act deals with how the works affect your neighbour. Crucially, having planning permission does <strong>not</strong> let you start notifiable works — the party wall process must conclude first. Address both early to avoid delay.</div>
       </div>
 
-      <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Can my neighbour stop my building work?
-          <span class="plus">+</span>
-        </button>
-        <div class="faq-a">No. The Party Wall etc. Act 1996 exists to facilitate works, not prevent them. Your neighbour cannot refuse your works — even if they dissent, the dispute resolution process through appointed surveyors will produce an Award that allows your works to proceed under agreed terms. However, you cannot start notifiable works until either consent is given or an Award has been served.</div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Who pays for the party wall surveyor?<span class="plus">+</span></button>
+        <div class="faq-a">The Building Owner carrying out the works normally meets the reasonable costs of the process, including the Adjoining Owner's surveyor's fees, under Section 10 of the Act. The Adjoining Owner shouldn't usually need to pay anything, unless they are also carrying out notifiable works of their own.</div>
       </div>
 
-      <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          What happens if I start work without serving notice?
-          <span class="plus">+</span>
-        </button>
-        <div class="faq-a">Starting notifiable works without serving proper notice is a breach of the Act. Your neighbour can seek an injunction through the County Court to stop your works immediately. This can be extremely costly and cause significant delays to your project. The court may also award damages. Always ensure proper notices are served and either consent is obtained or an Award is in place before commencing works.</div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can my neighbour stop my building work?<span class="plus">+</span></button>
+        <div class="faq-a">No. The Act exists to facilitate works, not to prevent them. Even if your neighbour dissents, the dispute-resolution process produces an Award that lets the works proceed on agreed terms. But you cannot start notifiable works until either consent is given in writing or an Award has been served.</div>
       </div>
 
-      <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          What is a Schedule of Condition?
-          <span class="plus">+</span>
-        </button>
-        <div class="faq-a">A Schedule of Condition is a detailed photographic and written record of the current state of the adjoining property before works begin. It records any existing cracks, defects, or damage so that if any new damage occurs during the works, there is a clear baseline for comparison. It forms part of the Party Wall Award and is a critical piece of evidence if a damage claim arises.</div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">How long does the whole process take?<span class="plus">+</span></button>
+        <div class="faq-a">If the Adjoining Owner consents in writing, you're clear once the notice period expires (2 months for Section 1, 1 month for Sections 2 and 6). If a dispute arises and an Award is needed, allow 4–8 weeks from surveyor appointment, longer for complex cases. As a rule of thumb, begin the party wall process around three months before your intended start date.</div>
       </div>
 
-      <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          How long does the party wall process take?
-          <span class="plus">+</span>
-        </button>
-        <div class="faq-a">If the Adjoining Owner consents in writing, the process is complete as soon as the statutory notice period expires (2 months for Section 1, 1 month for Sections 2 and 6). If a dispute arises and an Award is needed, the process typically takes 4–8 weeks from surveyor appointment, though complex cases can take longer. Factor this into your project programme — ideally begin the party wall process 3 months before your intended start date.</div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">What happens if I start work without serving notice?<span class="plus">+</span></button>
+        <div class="faq-a">Starting notifiable works without proper notice breaches the Act. Your neighbour can seek a County Court injunction to halt the works immediately — costly and disruptive — and the court may award damages. Always serve proper notices and have consent or an Award in place before you start.</div>
       </div>
 
-      <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Can I use the same surveyor as my neighbour?
-          <span class="plus">+</span>
-        </button>
-        <div class="faq-a">Yes. Both parties can agree to appoint a single "Agreed Surveyor" under Section 10(1)(a) of the Act. This is often quicker and more cost-effective. The Agreed Surveyor must act impartially — they do not represent either party. However, either party can at any time appoint their own surveyor instead, which converts the process to a two-surveyor arrangement.</div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is a Schedule of Condition?<span class="plus">+</span></button>
+        <div class="faq-a">A detailed photographic and written record of the adjoining property's condition before works begin. It captures existing cracks, defects and damage, so that if new damage appears during the works there's a clear baseline for comparison. It forms part of the Award and is critical evidence if a claim arises.</div>
       </div>
 
-      <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          What if my neighbour's property is empty or I can't find the owner?
-          <span class="plus">+</span>
-        </button>
-        <div class="faq-a">If the adjoining property is unoccupied or the owner cannot be traced, the notice can be served by fixing it to the property and sending a copy by registered post to the last known address. If no response is received within 14 days, a dispute is deemed to have arisen and you may proceed to appoint a surveyor on their behalf under Section 10(4)(b). A Land Registry title search can help identify the current owner.</div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">How do I know where my boundary is, and who owns the wall?<span class="plus">+</span></button>
+        <div class="faq-a">Most Land Registry title plans show only <em>general</em> boundaries, not the precise legal line, and the plan rarely settles who owns a given wall or fence. Check your deeds and transfer documents, look for "T-marks" indicating ownership and repairing responsibility, and take a surveyor's view if it's unclear. Getting this right early is essential — you can't serve the correct notice on the correct people without it.</div>
       </div>
 
-      <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Does the Act apply to garden boundary walls and fences?
-          <span class="plus">+</span>
-        </button>
-        <div class="faq-a">The Act covers "party fence walls" — walls that stand on the boundary but do not form part of a building. However, garden fences (timber) are not covered by the Party Wall etc. Act 1996. Boundary disputes about fences are a separate matter, typically governed by common law and the Land Registry. If you're building a new brick wall on or near the boundary, the Act may well apply.</div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I use the same surveyor as my neighbour?<span class="plus">+</span></button>
+        <div class="faq-a">Yes. Both parties can appoint a single "Agreed Surveyor" under Section 10(1)(a) — often quicker and more economical. The Agreed Surveyor acts impartially and represents neither party. Either party can instead appoint their own surveyor at any point, which converts it to a two-surveyor arrangement.</div>
       </div>
 
-      <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          What rights does a Building Owner have to access my property?
-          <span class="plus">+</span>
-        </button>
-        <div class="faq-a">Section 8 of the Act grants the Building Owner and their workpeople the right to enter the Adjoining Owner's property to carry out works authorised by the Award, provided at least 14 days' written notice is given (or 1 day in case of emergency). This right of access is a statutory provision — it cannot be unreasonably refused. However, the Building Owner must cause as little inconvenience as possible and must compensate for any loss or damage.</div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">What if I can't find or contact the adjoining owner?<span class="plus">+</span></button>
+        <div class="faq-a">If the property is unoccupied or the owner can't be traced, the notice can be served by fixing it to the property and posting a copy to the last known address. If no response comes within 14 days, a dispute is deemed to have arisen. You then serve a written request giving a further 10 days to appoint a surveyor; if they still don't, a surveyor can be appointed on their behalf under Section 10(4). A Land Registry title search can help identify the current owner.</div>
       </div>
 
-      <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Can I appeal a Party Wall Award?
-          <span class="plus">+</span>
-        </button>
-        <div class="faq-a">Yes. Either party has 14 days from the date of service of the Award to appeal to the County Court under Section 10(17). The appeal is a complete rehearing — the court will consider the matter afresh, not just review the surveyors' decision. Appeals are relatively rare and can be costly, but they provide an important safeguard if you believe the Award is fundamentally unfair or incorrect.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          Do I need planning permission as well as a party wall notice?
-          <span class="plus">+</span>
-        </button>
-        <div class="faq-a">The party wall process is completely separate from the planning process. You may need both, but they run independently. Planning permission deals with whether you can build; the Party Wall Act deals with how the works affect your neighbour's property. Neither process depends on the other, though both should be addressed early in your project planning to avoid delays.</div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Does the Act cover garden fences and boundary walls?<span class="plus">+</span></button>
+        <div class="faq-a">It covers "party fence walls" — masonry walls on the boundary that don't form part of a building. Ordinary timber garden fences are not covered; disputes about those are a separate matter under common law and the title. If you're building a new brick wall on or near the boundary, the Act may well apply.</div>
       </div>
 
     </div>
   </div>
 </section>
 
-
-<!-- =============================================== -->
-<!-- SECTION 06 — CHECKLIST                          -->
-<!-- =============================================== -->
-<section id="checklist" class="light-section alt">
+<!-- ===== CHECKLIST ===== -->
+<section id="checklist" class="light-section alt" data-rid="checklist" data-rlabel="Checklist">
   <div class="light-inner">
-    <h3 style="margin-bottom:0.3rem;">&#9745; Party Wall Checklist</h3>
-    <p style="color:var(--body); margin-bottom:2rem; font-size:0.92rem;">Click each item to mark it as complete. Use this to track your progress through the process.</p>
-    <div class="checklist-grid">
-      <div class="check-item" onclick="this.classList.toggle('checked')"><div class="check-box">&#10003;</div><span>Confirm works are notifiable under the Act</span></div>
-      <div class="check-item" onclick="this.classList.toggle('checked')"><div class="check-box">&#10003;</div><span>Identify all adjoining owners affected</span></div>
-      <div class="check-item" onclick="this.classList.toggle('checked')"><div class="check-box">&#10003;</div><span>Instruct a party wall surveyor</span></div>
-      <div class="check-item" onclick="this.classList.toggle('checked')"><div class="check-box">&#10003;</div><span>Determine correct notice type(s): S.1, S.2, or S.6</span></div>
-      <div class="check-item" onclick="this.classList.toggle('checked')"><div class="check-box">&#10003;</div><span>Prepare and serve formal notice(s)</span></div>
-      <div class="check-item" onclick="this.classList.toggle('checked')"><div class="check-box">&#10003;</div><span>Retain proof of service (recorded delivery / signed receipt)</span></div>
-      <div class="check-item" onclick="this.classList.toggle('checked')"><div class="check-box">&#10003;</div><span>Allow 14 days for adjoining owner response</span></div>
-      <div class="check-item" onclick="this.classList.toggle('checked')"><div class="check-box">&#10003;</div><span>If consent: record written agreement</span></div>
-      <div class="check-item" onclick="this.classList.toggle('checked')"><div class="check-box">&#10003;</div><span>If dissent: confirm surveyor appointments</span></div>
-      <div class="check-item" onclick="this.classList.toggle('checked')"><div class="check-box">&#10003;</div><span>Schedule of Condition completed</span></div>
-      <div class="check-item" onclick="this.classList.toggle('checked')"><div class="check-box">&#10003;</div><span>Party Wall Award prepared and served</span></div>
-      <div class="check-item" onclick="this.classList.toggle('checked')"><div class="check-box">&#10003;</div><span>14-day appeal period expired</span></div>
-      <div class="check-item" onclick="this.classList.toggle('checked')"><div class="check-box">&#10003;</div><span>Statutory notice period expired</span></div>
-      <div class="check-item" onclick="this.classList.toggle('checked')"><div class="check-box">&#10003;</div><span>Works commenced in accordance with Award</span></div>
-      <div class="check-item" onclick="this.classList.toggle('checked')"><div class="check-box">&#10003;</div><span>Any damage made good upon completion</span></div>
+    <div class="lead-in reveal" style="margin-bottom:1.4rem;">
+      <span class="li-label">Track your progress</span>
+      <h3>Building owner checklist</h3>
+      <p>Tick each item as you go. Your progress is saved on this device.</p>
+    </div>
+    <div class="checklist-bar reveal">
+      <div class="checklist-count" id="clCount">0 of 15 complete</div>
+      <div class="checklist-progress"><span id="clBar"></span></div>
+      <button class="checklist-reset" id="clReset">Reset</button>
+    </div>
+    <div class="checklist-grid" id="checklist">
+      <div class="check-item"><div class="check-box">&#10003;</div><span>Confirm the works are notifiable under the Act</span></div>
+      <div class="check-item"><div class="check-box">&#10003;</div><span>Establish the boundary line and who owns what</span></div>
+      <div class="check-item"><div class="check-box">&#10003;</div><span>Instruct architect and structural engineer together</span></div>
+      <div class="check-item"><div class="check-box">&#10003;</div><span>Finalise scale drawings with the boundary marked</span></div>
+      <div class="check-item"><div class="check-box">&#10003;</div><span>Identify all adjoining owners affected</span></div>
+      <div class="check-item"><div class="check-box">&#10003;</div><span>Instruct a party wall surveyor</span></div>
+      <div class="check-item"><div class="check-box">&#10003;</div><span>Determine the correct notice type(s): S.1, S.2 or S.6</span></div>
+      <div class="check-item"><div class="check-box">&#10003;</div><span>Prepare and serve valid notice(s)</span></div>
+      <div class="check-item"><div class="check-box">&#10003;</div><span>Retain proof of service</span></div>
+      <div class="check-item"><div class="check-box">&#10003;</div><span>Allow 14 days for the response</span></div>
+      <div class="check-item"><div class="check-box">&#10003;</div><span>Confirm consent in writing, or surveyor appointments</span></div>
+      <div class="check-item"><div class="check-box">&#10003;</div><span>Schedule of Condition completed</span></div>
+      <div class="check-item"><div class="check-box">&#10003;</div><span>Party Wall Award prepared and served</span></div>
+      <div class="check-item"><div class="check-box">&#10003;</div><span>14-day appeal period expired</span></div>
+      <div class="check-item"><div class="check-box">&#10003;</div><span>Works commenced strictly in line with the Award</span></div>
     </div>
   </div>
 </section>
 
+<!-- ===== SECTION 06 — RESOURCES ===== -->
+<section id="s-resources" class="dark-section section-header" data-rid="s-resources" data-rlabel="Resources divider" style="background-image:url('assets/img/coped-wall-city.jpg')">
+  <div class="section-inner">
+    <div>
+      <div class="section-label">Section 06</div>
+      <h2>Useful <em>Links &amp; Resources</em></h2>
+      <p>The legislation itself, the official guidance, and trusted help on boundaries and access. All open in a new tab.</p>
+    </div>
+    <div class="section-num" aria-hidden="true">06</div>
+  </div>
+</section>
 
-<!-- =============================================== -->
-<!-- CTA — CONTACT                                   -->
-<!-- =============================================== -->
-<section id="s-cta" class="dark-section cta-section" data-photo="Professional Inform branded image or site photo">
+<section id="resources" class="light-section" data-rid="resources" data-rlabel="Resources links">
+  <div class="light-inner">
+
+    <div class="res-group reveal">
+      <div class="res-group-title">The legislation</div>
+      <div class="res-grid">
+        <a class="res-card" href="https://www.legislation.gov.uk/ukpga/1996/40/contents" target="_blank" rel="noopener">
+          <div class="res-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v13h18V7"/><path d="M3 7l9-4 9 4"/><path d="M8 11v5M12 11v5M16 11v5"/></svg></div>
+          <div><h4>Party Wall etc. Act 1996 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></h4><p>The full text of the Act on the official statute book.</p><span class="res-src">legislation.gov.uk</span></div>
+        </a>
+        <a class="res-card" href="https://www.legislation.gov.uk/ukpga/1992/23/contents" target="_blank" rel="noopener">
+          <div class="res-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v13h18V7"/><path d="M3 7l9-4 9 4"/><path d="M8 11v5M12 11v5M16 11v5"/></svg></div>
+          <div><h4>Access to Neighbouring Land Act 1992 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></h4><p>When you can — and can't — get access for works that preserve your property.</p><span class="res-src">legislation.gov.uk</span></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="res-group reveal">
+      <div class="res-group-title">Official guidance</div>
+      <div class="res-grid">
+        <a class="res-card" href="https://www.gov.uk/government/publications/preventing-and-resolving-disputes-in-relation-to-party-walls/the-party-wall-etc-act-1996-explanatory-booklet" target="_blank" rel="noopener">
+          <div class="res-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11l5 5v11H4z"/><path d="M15 4v5h5"/><path d="M8 13h8M8 17h6"/></svg></div>
+          <div><h4>Party Wall Act explanatory booklet <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></h4><p>The government's plain-English guide, with example notices you can adapt.</p><span class="res-src">gov.uk</span></div>
+        </a>
+        <a class="res-card" href="https://www.gov.uk/your-property-boundaries" target="_blank" rel="noopener">
+          <div class="res-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 8h18M3 16h18" opacity=".5"/><rect x="3" y="3" width="18" height="18" rx="1"/></svg></div>
+          <div><h4>Your property boundaries <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></h4><p>How boundaries are recorded, and how to make a boundary agreement with a neighbour.</p><span class="res-src">gov.uk</span></div>
+        </a>
+        <a class="res-card" href="https://hmlandregistry.blog.gov.uk/2018/02/27/drawing-the-line-on-boundaries/" target="_blank" rel="noopener">
+          <div class="res-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 20 4M4 20h6M4 20v-6"/></svg></div>
+          <div><h4>Drawing the line on boundaries <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></h4><p>HM Land Registry explains why title plans show general — not exact — boundaries.</p><span class="res-src">HM Land Registry</span></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="res-group reveal">
+      <div class="res-group-title">Boundaries &amp; disputes</div>
+      <div class="res-grid">
+        <a class="res-card" href="https://www.citizensadvice.org.uk/housing/problems-with-neighbours/if-you-disagree-with-your-neighbour-about-a-wall-or-fence/" target="_blank" rel="noopener">
+          <div class="res-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div><h4>Disagreeing about a wall or fence <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></h4><p>Practical first steps when you and a neighbour disagree about a boundary structure.</p><span class="res-src">Citizens Advice</span></div>
+        </a>
+        <a class="res-card" href="https://www.gov.uk/your-property-boundaries/boundary-agreement-neighbour" target="_blank" rel="noopener">
+          <div class="res-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 13l2 2 4-4"/></svg></div>
+          <div><h4>Make a boundary agreement <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></h4><p>How to record an agreed boundary with your neighbour without going to court.</p><span class="res-src">gov.uk</span></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="res-group reveal">
+      <div class="res-group-title">Find a surveyor</div>
+      <div class="res-grid">
+        <a class="res-card" href="https://www.informsurveying.co.uk" target="_blank" rel="noopener">
+          <div class="res-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div><h4>Inform Surveying Limited <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></h4><p>RICS-regulated Chartered Building Surveyors, Sheffield. Party wall advice for both sides.</p><span class="res-src">informsurveying.co.uk</span></div>
+        </a>
+        <a class="res-card" href="https://pyramusandthisbesociety.org/find-a-surveyor/" target="_blank" rel="noopener">
+          <div class="res-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+          <div><h4>The Pyramus &amp; Thisbe Society <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></h4><p>The leading body for party wall practitioners — find a specialist surveyor near you.</p><span class="res-src">pyramusandthisbesociety.org.uk</span></div>
+        </a>
+        <a class="res-card" href="https://www.ricsfirms.com/" target="_blank" rel="noopener">
+          <div class="res-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div><h4>RICS — Find a Surveyor <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></h4><p>Search the Royal Institution of Chartered Surveyors' official register of regulated firms.</p><span class="res-src">ricsfirms.com</span></div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section id="contact" class="dark-section cta-section" data-rid="contact" data-rlabel="Contact / CTA" style="background-image:url('assets/img/scaffold-cityscape.jpg')">
   <div class="section-inner">
     <h2>Need Expert <em>Party Wall Advice?</em></h2>
-    <p>Whether you're a Building Owner planning works or an Adjoining Owner who's received a notice, our Chartered Surveyors are here to help.</p>
+    <p>Whether you're planning works or you've received a notice, our Chartered Surveyors will guide you through it — clearly, and on time.</p>
     <div class="cta-buttons">
-      <a href="tel:01143219919" class="btn btn-primary">&#9742; 0114 321 9919</a>
-      <a href="mailto:info@informsurveying.co.uk" class="btn btn-outline">&#9993; Get in Touch</a>
+      <a href="tel:01143219919" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        0114 321 9919
+      </a>
+      <a href="mailto:info@informsurveying.co.uk" class="btn btn-outline">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        Get in touch
+      </a>
     </div>
     <div class="cta-contact">
-      <strong style="color:rgba(255,255,255,0.7);">Inform Surveying Limited</strong><br>
-      Chartered Building Surveyors &bull; RICS Regulated<br>
+      <strong style="color:rgba(255,255,255,.85);">Inform Surveying Limited</strong><br>
+      Chartered Building Surveyors &bull; RICS Regulated &bull; Sheffield<br>
       <a href="https://www.informsurveying.co.uk">www.informsurveying.co.uk</a>
     </div>
   </div>
 </section>
 
-
 <!-- ===== FOOTER ===== -->
 <footer class="site-footer">
-  &copy; 2026 Inform Surveying Limited. All rights reserved. Regulated by RICS.<br>
-  Party Wall etc. Act 1996 — this guide is for general information only and does not constitute legal advice.<br>
-  <a href="https://www.informsurveying.co.uk">informsurveying.co.uk</a>
+  <img src="assets/img/logo-amber.png" alt="Inform Surveying">
+  <div>&copy; 2026 Inform Surveying Limited. All rights reserved. Regulated by RICS.</div>
+  <div class="fine">This guide is for general information about the Party Wall etc. Act 1996 and does not constitute legal advice. For advice on your specific circumstances, please get in touch.</div>
+  <div style="margin-top:.6rem;"><a href="https://www.informsurveying.co.uk">informsurveying.co.uk</a></div>
 </footer>
 
 
-<!-- ===== SCROLL SPY ===== -->
+<!-- ===== CORE SCRIPTS ===== -->
 <script>
 (function(){
+  // Scroll progress
+  const sp = document.getElementById('scrollProgress');
+  function onScroll(){
+    const h = document.documentElement;
+    const max = h.scrollHeight - h.clientHeight;
+    sp.style.width = (max>0 ? (h.scrollTop/max)*100 : 0) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
   // Active nav link on scroll
-  const sections = document.querySelectorAll('.dark-section[id], .light-section[id]');
+  const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if(e.isIntersecting) {
-        const id = e.target.id;
-        navLinks.forEach(l => {
-          l.classList.toggle('active', l.getAttribute('data-section') === id ||
-            l.getAttribute('href') === '#' + id);
-        });
-      }
-    });
-  }, { rootMargin:'-30% 0px -65% 0px' });
-  sections.forEach(s => obs.observe(s));
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting){
+      const id = e.target.id;
+      navLinks.forEach(l=>l.classList.toggle('active',
+        l.getAttribute('data-section')===id || l.getAttribute('href')==='#'+id));
+    }});
+  },{rootMargin:'-30% 0px -65% 0px'});
+  sections.forEach(s=>obs.observe(s));
 
   // Close mobile nav on link click
-  navLinks.forEach(l => l.addEventListener('click', () => {
-    document.querySelector('.nav-links').classList.remove('open');
-  }));
+  navLinks.forEach(l=>l.addEventListener('click',()=>document.querySelector('.nav-links').classList.remove('open')));
+
+  // Reveal on scroll
+  const rev = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const ro = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target); } });
+    },{rootMargin:'0px 0px -8% 0px'});
+    rev.forEach(el=>ro.observe(el));
+  } else { rev.forEach(el=>el.classList.add('in')); }
+
+  // Checklist with persistence
+  const CL_KEY = 'pw_v4_checklist';
+  const items = Array.from(document.querySelectorAll('#checklist .check-item'));
+  const bar = document.getElementById('clBar'), count = document.getElementById('clCount');
+  function loadCl(){ try{ return JSON.parse(localStorage.getItem(CL_KEY)||'[]'); }catch(e){ return []; } }
+  function saveCl(){ localStorage.setItem(CL_KEY, JSON.stringify(items.map(i=>i.classList.contains('checked')))); }
+  function updateCl(){
+    const done = items.filter(i=>i.classList.contains('checked')).length;
+    count.textContent = done+' of '+items.length+' complete';
+    bar.style.width = (done/items.length*100)+'%';
+  }
+  const state = loadCl();
+  items.forEach((it,idx)=>{
+    if(state[idx]) it.classList.add('checked');
+    it.addEventListener('click',()=>{ it.classList.toggle('checked'); saveCl(); updateCl(); });
+  });
+  updateCl();
+  document.getElementById('clReset').addEventListener('click',()=>{
+    items.forEach(i=>i.classList.remove('checked')); saveCl(); updateCl();
+  });
 })();
 </script>
+
 
 </body>
 </html>
