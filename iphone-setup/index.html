@@ -58,13 +58,13 @@ button{font:inherit;}
 .head{background:var(--head-bg);color:var(--head-ink);padding-block:22px 18px;}
 .wrap{max-width:1080px;margin:0 auto;padding-inline:16px;}
 .brand{display:flex;align-items:center;gap:12px;}
-.brand img{height:30px;width:auto;}
+.brand img{height:38px;width:auto;}
 .brand span{font:500 .66rem/1 'Rubik',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--head-muted);border-left:1px solid rgba(255,255,255,.2);padding-left:12px;}
 .head h1{color:var(--head-ink);font-size:clamp(1.6rem,4.5vw,2.3rem);font-weight:800;letter-spacing:-.01em;margin-top:18px;line-height:1.15;}
 .head h1 em{font-style:normal;color:#E8912F;}
 .head p{color:var(--head-muted);max-width:62ch;margin:8px 0 0;font-size:.95rem;}
 .meter{margin-top:18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
-.bar{flex:1 1 220px;height:8px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden;}
+.bar{flex:1 1 220px;height:8px;border-radius:99px;background:rgba(255,255,255,.2);overflow:hidden;}
 .bar i{display:block;height:100%;width:0;background:#E8912F;transition:width .3s;}
 .meter b{font:600 .85rem 'Rubik',sans-serif;font-variant-numeric:tabular-nums;color:var(--head-ink);white-space:nowrap;}
 .meter small{color:var(--head-muted);font-size:.78rem;}
@@ -86,7 +86,7 @@ button{font:inherit;}
 
 /* ===== Content ===== */
 main{padding-block:20px 60px;}
-.note{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;font-size:.88rem;display:grid;gap:4px;}
+.note{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;font-size:.88rem;}
 .note strong{color:var(--ink);}
 section.cat{margin-top:28px;}
 .cat-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;border-bottom:2px solid var(--ink);padding-bottom:6px;margin-bottom:12px;}
@@ -158,7 +158,7 @@ footer p{margin:0 0 6px;max-width:80ch;}
 
 <footer class="wrap">
   <p id="sourcesLine"></p>
-  <p>Settings paths are for iOS 26 as shipped on iPhone 18 Pro. Apple moves things between releases, so if a path has changed, search for the setting name in the Settings app.</p>
+  <p>Settings paths are for iOS 27 on iPhone 18 Pro. Apple moves things between releases, so if a path has changed, search for the setting name in the Settings app.</p>
   <p><button type="button" class="linkbtn" id="reset">Clear my ticks</button> <span id="resetConfirm" hidden>Tap again to confirm.</span></p>
 </footer>
 
@@ -166,11 +166,183 @@ footer p{margin:0 0 6px;max-width:80ch;}
 /* ===== DATA =====
    cat: category id. tag: S = surveying, P = personal, B = both.
    level: Easy / Medium / Advanced. d1: do on day one.
-   path: Settings path, "›" separated. v: unverified for iPhone 18 / iOS 26. */
-const CATS = [/*CATS*/];
-const TIPS = [/*TIPS*/];
-const FACTS = /*FACTS*/"";
-const SOURCES = /*SOURCES*/"";
+   path: Settings path, "›" separated. v: unverified for iPhone 18 / iOS 27. */
+const CATS = [
+ {
+  "id": "buttons",
+  "name": "Buttons, Shortcuts & automations",
+  "intro": "The Action button, Camera Control and Back Tap are three physical shortcuts. Put your most-used site tools behind them, and let location and NFC automations do the switching for you."
+ },
+ {
+  "id": "screens",
+  "name": "Home Screen, Lock Screen & Control Centre",
+  "intro": "A Site Visit Focus can swap in its own Home Screen page, Lock Screen and notification rules the moment you arrive."
+ },
+ {
+  "id": "display",
+  "name": "Display"
+ },
+ {
+  "id": "camera",
+  "name": "Camera for surveying",
+  "intro": "Evidence photos need to be sharp, straight, located and colour-faithful. Most of this is set once in Settings › Camera."
+ },
+ {
+  "id": "measure",
+  "name": "LiDAR, measuring & 3D",
+  "intro": "LiDAR is good for quick room sizes and sketch plans. It is not a substitute for a laser measure on a measured survey."
+ },
+ {
+  "id": "storage",
+  "name": "Storage & cloud"
+ },
+ {
+  "id": "battery",
+  "name": "Battery"
+ },
+ {
+  "id": "security",
+  "name": "Security & privacy"
+ },
+ {
+  "id": "safety",
+  "name": "Lone working & emergency"
+ },
+ {
+  "id": "connect",
+  "name": "Connectivity"
+ },
+ {
+  "id": "apps",
+  "name": "Recommended apps"
+ },
+ {
+  "id": "personal",
+  "name": "Personal quality of life"
+ }
+];
+const TIPS = [
+{"id": "t001", "cat": "buttons", "title": "Action button opens a “Site menu” shortcut", "why": "One press shows a menu: Photo note, Dictate defect, Voice memo, Measure, Torch, Open Plaud. Five tools on one button.", "path": "Settings › Action Button › Shortcut", "tag": "S", "level": "Medium", "d1": 1},
+{"id": "t002", "cat": "buttons", "title": "Build shortcuts by describing them", "why": "iOS 27 can build a shortcut from plain English, e.g. “ask for job number and address, then create a folder and a note”.", "path": "Shortcuts › + › Describe a Shortcut", "tag": "B", "level": "Easy"},
+{"id": "t003", "cat": "buttons", "title": "Timestamped defect note", "why": "Dictate text, add the current date, location and street address, then append it to a “[Job] Site Notes” note. Gives an audit trail for schedules of condition and dilapidations.", "path": "Shortcuts app", "tag": "S", "level": "Medium", "d1": 1},
+{"id": "t004", "cat": "buttons", "title": "Photo and caption logger", "why": "Take a photo, type a caption, save it to an album named after the job, and log the caption and time in the job note.", "path": "Shortcuts app", "tag": "S", "level": "Medium"},
+{"id": "t005", "cat": "buttons", "title": "“New Job” folder builder", "why": "Asks for the job number and address, then creates the job folder with Photos, Notes, Drawings and Correspondence sub-folders. Works in iCloud Drive; test it inside Google Drive before relying on it.", "path": "Shortcuts app", "tag": "S", "level": "Advanced", "v": 1},
+{"id": "t006", "cat": "buttons", "title": "Mileage log", "why": "Captures location at the start and end of a trip and appends date, job, miles and 45p per mile to a sheet. Or log mileage straight into Xero.", "path": "Shortcuts app", "tag": "S", "level": "Advanced"},
+{"id": "t007", "cat": "buttons", "title": "Arrive-on-site automation", "why": "When you arrive at the site address: turn on the Site Visit Focus and prompt you to start the Plaud recording. In iOS 27, triggers live inside the shortcut itself.", "path": "Shortcuts › Automation", "tag": "S", "level": "Medium"},
+{"id": "t008", "cat": "buttons", "title": "Leave-site automation", "why": "When you leave: turn the Focus off and prompt you to upload photos and the recording to Drive.", "path": "Shortcuts › Automation", "tag": "S", "level": "Medium"},
+{"id": "t009", "cat": "buttons", "title": "NFC tag on the car dashboard", "why": "A cheap NTAG215 sticker. Tap it to start the mileage log, route to the next appointment and turn on Driving Focus.", "path": "Shortcuts › Automation › NFC", "tag": "S", "level": "Medium"},
+{"id": "t010", "cat": "buttons", "title": "NFC tag on the kit bag", "why": "Tap to show a kit checklist: laser measure, moisture meter, thermal camera, ladder, PPE, Plaud charged.", "path": "Shortcuts › Automation › NFC", "tag": "S", "level": "Easy"},
+{"id": "t011", "cat": "buttons", "title": "Back Tap for torch and quick note", "why": "Double-tap the back of the phone for the torch in lofts and cellars; triple-tap to run the timestamped note.", "path": "Settings › Accessibility › Touch › Back Tap", "tag": "B", "level": "Easy", "d1": 1},
+{"id": "t012", "cat": "buttons", "title": "Choose what Camera Control opens", "why": "Camera, Magnifier, Code Scanner, or a field camera app such as Solocator.", "path": "Settings › Camera › Camera Control › Launch Camera", "tag": "S", "level": "Easy", "d1": 1},
+{"id": "t013", "cat": "buttons", "title": "Trim the Camera Control overlay", "why": "Keep only Exposure and Zoom so adjustments are quicker. Reports conflict on whether the 18 Pro still has the slide gesture, so test it on your phone.", "path": "Settings › Camera › Camera Control › Customise", "tag": "S", "level": "Easy", "v": 1},
+{"id": "t014", "cat": "buttons", "title": "Light press locks focus and exposure", "why": "Works like a half-press on a proper camera. Useful against bright windows and in dark roof voids.", "path": "Settings › Camera › Camera Control › Lock Focus and Exposure", "tag": "S", "level": "Easy", "v": 1},
+{"id": "t015", "cat": "buttons", "title": "Visual Intelligence on data plates", "why": "Long-press Camera Control on a boiler or consumer unit label to pull out the text or look up the model.", "path": "Camera Control › long press", "tag": "S", "level": "Easy"},
+{"id": "t016", "cat": "buttons", "title": "Focus-aware Action button", "why": "A shortcut that checks the current Focus: on site it opens the photo-note menu, otherwise it toggles Silent.", "path": "Shortcuts app", "tag": "B", "level": "Advanced"},
+{"id": "t017", "cat": "buttons", "title": "Name shortcuts for Siri", "why": "“Hey Siri, defect note” runs your note shortcut hands-free while you are up a ladder. The shortcut name is the phrase.", "path": "Shortcuts app", "tag": "S", "level": "Easy"},
+{"id": "t018", "cat": "buttons", "title": "One-tap Plaud", "why": "Add “Open App: Plaud” to Control Centre or the site menu. Plaud does not appear to offer its own Shortcuts actions yet.", "path": "Plaud app › Record", "tag": "S", "level": "Easy", "v": 1},
+{"id": "t019", "cat": "buttons", "title": "Voice Memos as the fallback recorder", "why": "If the Plaud is flat, Voice Memos records and transcribes on the phone.", "path": "Settings › Action Button › Voice Memo", "tag": "S", "level": "Easy"},
+{"id": "t020", "cat": "buttons", "title": "Morning brief shortcut", "why": "Today’s appointments, travel time to the first job and the rain forecast, which matters for roof and external inspections.", "path": "Shortcuts app", "tag": "B", "level": "Medium"},
+{"id": "t021", "cat": "screens", "title": "Site Visit Focus with its own Home Screen", "why": "Show one page of field apps only: Camera, Magnifier, Measure, Solocator, Magicplan, Plaud, Drive, OS Maps.", "path": "Settings › Focus › [Focus] › Customise Screens", "tag": "S", "level": "Medium", "d1": 1},
+{"id": "t022", "cat": "screens", "title": "Focus Filters for work and home", "why": "On site, show only the work calendar and mailbox; in Personal Focus, the reverse.", "path": "Settings › Focus › [Focus] › Focus Filters", "tag": "B", "level": "Medium"},
+{"id": "t023", "cat": "screens", "title": "A Lock Screen per Focus", "why": "A work Lock Screen with Calendar, Weather and Batteries widgets, linked to the Site Visit Focus.", "path": "Long-press Lock Screen › Focus", "tag": "B", "level": "Easy"},
+{"id": "t024", "cat": "screens", "title": "Swap the Lock Screen corner buttons", "why": "Replace torch and camera with Voice Memo and Magnifier, or Plaud.", "path": "Long-press Lock Screen › Customise", "tag": "S", "level": "Easy"},
+{"id": "t025", "cat": "screens", "title": "Smaller clock, hidden media player", "why": "New in iOS 27. Frees space on the Lock Screen for widgets and wallpaper.", "path": "Lock Screen › Customise", "tag": "P", "level": "Easy"},
+{"id": "t026", "cat": "screens", "title": "Wallpaper Extend", "why": "New in iOS 27. Apple Intelligence extends a photo to fill the whole screen.", "path": "Lock Screen › wallpaper › Extend", "tag": "P", "level": "Easy"},
+{"id": "t027", "cat": "screens", "title": "Field widgets on the Home Screen", "why": "Calendar (Up Next), hourly rain, Batteries, Drive recent files, and a Shortcuts widget with four job buttons.", "path": "Long-press Home Screen › Edit › Add Widget", "tag": "S", "level": "Easy"},
+{"id": "t028", "cat": "screens", "title": "Smart Stack to save space", "why": "Stack Calendar, Weather and Maps in one widget that rotates by context.", "path": "Home Screen › Edit › Add Widget › Smart Stack", "tag": "P", "level": "Easy"},
+{"id": "t029", "cat": "screens", "title": "Tone down Liquid Glass", "why": "Slide towards tinted so text on buttons and menus reads better in daylight.", "path": "Settings › Appearance › Liquid Glass", "tag": "B", "level": "Easy", "v": 1},
+{"id": "t030", "cat": "screens", "title": "Dark or tinted icons", "why": "A calmer, less distracting Home Screen.", "path": "Home Screen › Edit › Customise", "tag": "P", "level": "Easy"},
+{"id": "t031", "cat": "screens", "title": "A field page in Control Centre", "why": "Torch, Magnifier, Code Scanner, Voice Memo, Measure, Personal Hotspot, Low Power Mode, Screen Recording.", "path": "Swipe down › + › Add a Control", "tag": "S", "level": "Easy", "d1": 1},
+{"id": "t032", "cat": "screens", "title": "Block Control Centre when locked", "why": "Stops a thief switching on Airplane Mode to hide the phone from Find My.", "path": "Settings › Face ID & Passcode › Allow Access When Locked", "tag": "B", "level": "Easy", "d1": 1},
+{"id": "t033", "cat": "screens", "title": "StandBy on the desk or bedside", "why": "Clock, calendar and widgets while charging on its side; Night mode dims it to red.", "path": "Settings › StandBy", "tag": "P", "level": "Easy"},
+{"id": "t034", "cat": "screens", "title": "Require Face ID for sensitive apps", "why": "Lock Drive, Xero and Photos behind Face ID in case the phone is handed over unlocked.", "path": "Long-press app › Require Face ID", "tag": "B", "level": "Easy"},
+{"id": "t035", "cat": "display", "title": "Keep Auto-Brightness on", "why": "Needed to reach peak outdoor brightness (about 2,300 nits in Tom’s Guide’s test). Manual brightness caps lower.", "path": "Settings › Accessibility › Display & Text Size › Auto-Brightness", "tag": "S", "level": "Easy", "d1": 1},
+{"id": "t036", "cat": "display", "title": "Tune the Always-On display", "why": "Turn off wallpaper and notifications on the Always-On display, or switch it off entirely on long site days.", "path": "Settings › Display & Brightness › Always On Display", "tag": "B", "level": "Easy"},
+{"id": "t037", "cat": "display", "title": "True Tone off when judging colour", "why": "Stops the screen shifting colour when you review staining, tide marks or finishes.", "path": "Settings › Display & Brightness › True Tone", "tag": "S", "level": "Easy"},
+{"id": "t038", "cat": "display", "title": "Night Shift on a schedule", "why": "Sunset to sunrise, for evening report writing.", "path": "Settings › Display & Brightness › Night Shift", "tag": "P", "level": "Easy"},
+{"id": "t039", "cat": "display", "title": "Reduce White Point on triple-click", "why": "Much easier on the eyes at night. Add it to the Accessibility Shortcut.", "path": "Settings › Accessibility › Display & Text Size", "tag": "P", "level": "Easy"},
+{"id": "t040", "cat": "display", "title": "Bigger or bold text", "why": "Easier to read in glare or with gloves on.", "path": "Settings › Display & Brightness › Text Size", "tag": "B", "level": "Easy"},
+{"id": "t041", "cat": "display", "title": "Display Zoom for a larger interface", "why": "Especially useful on the 6.3-inch Pro.", "path": "Settings › Display & Brightness › Display Zoom", "tag": "P", "level": "Easy"},
+{"id": "t042", "cat": "display", "title": "Limit Frame Rate on marathon days", "why": "Caps the screen at 60Hz for a small battery saving. Otherwise leave ProMotion on.", "path": "Settings › Accessibility › Motion › Limit Frame Rate", "tag": "B", "level": "Easy"},
+{"id": "t043", "cat": "display", "title": "Raise to Wake and Tap to Wake", "why": "Wake the phone without pressing buttons when your hands are dirty.", "path": "Settings › Display & Brightness › Raise to Wake", "tag": "S", "level": "Easy"},
+{"id": "t044", "cat": "camera", "title": "48MP HEIF Max for evidence", "why": "Full resolution lets you crop into cracks and pointing later, at about 5MB a shot.", "path": "Settings › Camera › Formats › Photo Mode", "tag": "S", "level": "Easy", "d1": 1},
+{"id": "t045", "cat": "camera", "title": "Most Compatible (JPEG) if systems need it", "why": "Some report software and older clients can’t read HEIC. Google Drive and Photos can convert on upload instead.", "path": "Settings › Camera › Formats", "tag": "S", "level": "Easy"},
+{"id": "t046", "cat": "camera", "title": "ProRAW only for hard cases", "why": "Very dark cellars or high-contrast elevations. About 75MB a file, so never the default.", "path": "Settings › Camera › Formats › ProRAW & Resolution Control", "tag": "S", "level": "Medium"},
+{"id": "t047", "cat": "camera", "title": "Grid and Level on", "why": "Straight verticals on elevations. The Level also shows a crosshair for square-on floor and ceiling shots.", "path": "Settings › Camera › Grid / Level", "tag": "S", "level": "Easy", "d1": 1},
+{"id": "t048", "cat": "camera", "title": "Precise location on photos", "why": "Every photo records where it was taken: useful evidence on party wall schedules of condition.", "path": "Settings › Privacy & Security › Location Services › Camera", "tag": "S", "level": "Easy", "d1": 1},
+{"id": "t049", "cat": "camera", "title": "Strip location when sharing externally", "why": "Share sheet › Options › turn Location off before sending photos to third parties.", "path": "Share sheet › Options", "tag": "B", "level": "Easy"},
+{"id": "t050", "cat": "camera", "title": "Live Photos off, and keep it off", "why": "Saves storage and gives cleaner report images. Preserve the setting so it doesn’t come back on.", "path": "Settings › Camera › Preserve Settings › Live Photo", "tag": "S", "level": "Easy", "d1": 1},
+{"id": "t051", "cat": "camera", "title": "Preserve the lens aperture", "why": "New on the 18 Pro. Without this, a manually set aperture resets each time the camera opens.", "path": "Settings › Camera › Preserve Settings › Lens Aperture", "tag": "S", "level": "Easy", "d1": 1},
+{"id": "t052", "cat": "camera", "title": "f/2.8 to f/4 for deep focus", "why": "The new variable aperture keeps a crack and its context sharp in one frame. Use f/1.48 for dim lofts.", "path": "Camera › Pro Controls", "tag": "S", "level": "Medium"},
+{"id": "t053", "cat": "camera", "title": "Check the histogram in dark voids", "why": "Pro Controls shows a live histogram, which is more reliable than the screen in roof spaces.", "path": "Camera › Pro Controls", "tag": "S", "level": "Medium"},
+{"id": "t054", "cat": "camera", "title": "Macro Control on", "why": "Shows when macro kicks in for crack gauges and lets you stop it switching on its own.", "path": "Settings › Camera › Macro Control", "tag": "S", "level": "Easy", "d1": 1},
+{"id": "t055", "cat": "camera", "title": "Lens Correction on", "why": "Straightens Ultra Wide distortion in small rooms.", "path": "Settings › Camera › Lens Correction", "tag": "S", "level": "Easy", "d1": 1},
+{"id": "t056", "cat": "camera", "title": "4x telephoto for roofs and chimneys", "why": "Inspect flashings, pots and gutters from the ground at up to 48MP.", "path": "Camera app", "tag": "S", "level": "Easy"},
+{"id": "t057", "cat": "camera", "title": "Prioritise Faster Shooting", "why": "Keeps up when you fire off quick sequences on a walk-round.", "path": "Settings › Camera › Prioritise Faster Shooting", "tag": "S", "level": "Easy"},
+{"id": "t058", "cat": "camera", "title": "A neutral Photographic Style", "why": "Colour-faithful images for dilapidations evidence.", "path": "Camera › Styles", "tag": "S", "level": "Easy"},
+{"id": "t059", "cat": "camera", "title": "Audio Zoom for narrated walk-throughs", "why": "New in iOS 27. The microphone focuses where you zoom, cutting site noise.", "path": "Camera › Video", "tag": "S", "level": "Easy"},
+{"id": "t060", "cat": "camera", "title": "“Captured by Me” filter", "why": "New in iOS 27. Hides screenshots and saved images when you pick a job’s photos.", "path": "Photos › Library › Filter", "tag": "S", "level": "Easy"},
+{"id": "t061", "cat": "camera", "title": "An album per job", "why": "Share a job album with colleagues in one step.", "path": "Photos › Albums", "tag": "S", "level": "Easy"},
+{"id": "t062", "cat": "camera", "title": "Solocator for stamped evidence", "why": "Burns GPS, bearing, date, time and a note onto the image, and can save both versions to Drive.", "path": "App Store", "tag": "S", "level": "Easy"},
+{"id": "t063", "cat": "camera", "title": "Magnifier for small print", "why": "Meter numbers, CE marks and glazing-seal dates, with the torch on.", "path": "Magnifier app", "tag": "S", "level": "Easy"},
+{"id": "t064", "cat": "measure", "title": "Measure app for quick sizes", "why": "LiDAR room sizes with edge snapping. Treat as roughly ±1 to 2cm and check against a laser; not for an RICS measured survey.", "path": "Measure app", "tag": "S", "level": "Easy"},
+{"id": "t065", "cat": "measure", "title": "RoomPlan sketch plans", "why": "Magicplan, RoomScan Pro or Canvas give quick floor plans for Level 2 and Level 3 surveys.", "path": "App Store", "tag": "S", "level": "Medium"},
+{"id": "t066", "cat": "measure", "title": "Point clouds of neighbouring walls", "why": "Polycam, SiteScape or Dot3D record façades and adjoining walls before party wall works as an exportable 3D record.", "path": "App Store", "tag": "S", "level": "Medium"},
+{"id": "t067", "cat": "measure", "title": "Bluetooth laser into the plan", "why": "Leica DISTO Plan or Bosch MeasureOn put laser readings straight into a sketch. More accurate than LiDAR alone.", "path": "App Store", "tag": "S", "level": "Medium"},
+{"id": "t068", "cat": "measure", "title": "Keep the lens and LiDAR glass clean", "why": "Dust degrades scans and photos. Keep a microfibre cloth in the kit bag.", "path": "", "tag": "S", "level": "Easy"},
+{"id": "t069", "cat": "storage", "title": "Buy 512GB for field phones", "why": "48MP photos, 4K video, scans and ProRAW fill 256GB quickly. 1TB if you shoot a lot of video or ProRAW.", "path": "Purchase", "tag": "S", "level": "Easy", "d1": 1},
+{"id": "t070", "cat": "storage", "title": "iCloud Photos with Optimise Storage", "why": "Full-size originals in iCloud and smaller copies on the phone. Needs iCloud+ 200GB or 2TB.", "path": "Settings › [Name] › iCloud › Photos", "tag": "P", "level": "Easy"},
+{"id": "t071", "cat": "storage", "title": "Keep work evidence in Google Workspace", "why": "Back job photos up to the company Drive or Google Photos, not personal iCloud.", "path": "Google Drive / Google Photos", "tag": "S", "level": "Medium", "d1": 1},
+{"id": "t072", "cat": "storage", "title": "Separate work and personal photos", "why": "Move job albums to Drive once uploaded, then delete them from the phone.", "path": "Photos", "tag": "B", "level": "Medium"},
+{"id": "t073", "cat": "storage", "title": "Add Google Drive to Files", "why": "Save PDFs and scans straight into job folders from any app.", "path": "Files › Browse › ⋯ › Edit", "tag": "S", "level": "Easy", "d1": 1},
+{"id": "t074", "cat": "storage", "title": "Offload Unused Apps", "why": "Frees space automatically and keeps each app’s data.", "path": "Settings › Apps › App Store › Offload Unused Apps", "tag": "P", "level": "Easy"},
+{"id": "t075", "cat": "storage", "title": "Check storage monthly", "why": "Clear big videos and old message attachments.", "path": "Settings › General › iPhone Storage", "tag": "B", "level": "Easy"},
+{"id": "t076", "cat": "storage", "title": "Scan documents to PDF", "why": "Title plans, notices and schedules straight into Files or Notes.", "path": "Files › ⋯ › Scan Documents", "tag": "S", "level": "Easy"},
+{"id": "t077", "cat": "battery", "title": "80% charge limit", "why": "Protects battery health if you keep the phone three years or more. Switch it off before a long site day.", "path": "Settings › Battery › Charging", "tag": "B", "level": "Easy"},
+{"id": "t078", "cat": "battery", "title": "Adaptive Power", "why": "Trims performance when usage is heavy. On by default on newer models.", "path": "Settings › Battery › Power Mode", "tag": "B", "level": "Easy"},
+{"id": "t079", "cat": "battery", "title": "Low Power Mode in Control Centre", "why": "One tap when you drop below 30% on site.", "path": "Control Centre", "tag": "B", "level": "Easy"},
+{"id": "t080", "cat": "battery", "title": "Audit Background App Refresh", "why": "Turn it off for apps that don’t need it.", "path": "Settings › General › Background App Refresh", "tag": "P", "level": "Easy"},
+{"id": "t081", "cat": "battery", "title": "MagSafe power bank in the bag", "why": "LiDAR, 48MP shooting and GPS drain even the 18 Pro.", "path": "", "tag": "S", "level": "Easy"},
+{"id": "t082", "cat": "security", "title": "Stolen Device Protection on", "why": "Face ID plus a one-hour delay for sensitive changes away from familiar places. Confirm it is on.", "path": "Settings › Face ID & Passcode › Stolen Device Protection", "tag": "B", "level": "Easy", "d1": 1},
+{"id": "t083", "cat": "security", "title": "Six-digit passcode and Face ID", "why": "Add an Alternative Appearance with safety glasses or a mask.", "path": "Settings › Face ID & Passcode", "tag": "B", "level": "Easy", "d1": 1},
+{"id": "t084", "cat": "security", "title": "Passkeys for Google, Xero and Apple", "why": "Phishing-resistant sign-ins stored in the Passwords app.", "path": "Passwords app", "tag": "B", "level": "Easy"},
+{"id": "t085", "cat": "security", "title": "Advanced Data Protection", "why": "End-to-end encrypts iCloud backups, Photos and Notes. Set a recovery contact or key first.", "path": "Settings › [Name] › iCloud › Advanced Data Protection", "tag": "P", "level": "Medium"},
+{"id": "t086", "cat": "security", "title": "Impersonation Risk Detection", "why": "New in iOS 27. Warns about scam and impersonation attempts.", "path": "Settings › Privacy & Security", "tag": "B", "level": "Easy"},
+{"id": "t087", "cat": "security", "title": "Screen Unknown Callers", "why": "Filters spam while new clients can still get through by giving a reason.", "path": "Settings › Apps › Phone › Screen Unknown Callers", "tag": "B", "level": "Easy"},
+{"id": "t088", "cat": "security", "title": "Recovery and Legacy Contacts", "why": "Get back in if the phone is lost; family access if the worst happens.", "path": "Settings › [Name] › Sign-In & Security", "tag": "P", "level": "Easy"},
+{"id": "t089", "cat": "security", "title": "Review app permissions", "why": "Check which apps use location, camera and microphone every few months.", "path": "Settings › Privacy & Security", "tag": "B", "level": "Easy"},
+{"id": "t090", "cat": "safety", "title": "Medical ID on the Lock Screen", "why": "Allergies, blood type and emergency contacts, readable without unlocking.", "path": "Health › Profile › Medical ID › Show When Locked", "tag": "B", "level": "Easy", "d1": 1},
+{"id": "t091", "cat": "safety", "title": "Emergency SOS set up", "why": "Call with Hold and Release, Call with 5 Presses, Crash Detection. Try the satellite demo.", "path": "Settings › Emergency SOS", "tag": "B", "level": "Easy", "d1": 1},
+{"id": "t092", "cat": "safety", "title": "Check In for lone visits", "why": "Messages alerts a colleague if you are not back on time and shares your location and battery.", "path": "Messages › + › Check In", "tag": "S", "level": "Easy", "d1": 1},
+{"id": "t093", "cat": "safety", "title": "Share location with the office", "why": "Find My lets the office see where surveyors are on vacant or remote sites.", "path": "Find My › People › Share My Location", "tag": "S", "level": "Easy"},
+{"id": "t094", "cat": "safety", "title": "Send Last Location", "why": "The phone reports its position when the battery is nearly flat.", "path": "Settings › [Name] › Find My › Find My iPhone", "tag": "B", "level": "Easy"},
+{"id": "t095", "cat": "safety", "title": "A proper lone-worker app", "why": "For a formal lone-working policy: StaySafe, CheckedSafe or Peoplesafe offer timers, man-down and escalation.", "path": "App Store", "tag": "S", "level": "Medium"},
+{"id": "t096", "cat": "safety", "title": "Messages and SOS via satellite", "why": "Works in the UK with no signal, for rural sites and basements. Newer satellite features for the UK are unconfirmed.", "path": "Settings › Emergency SOS", "tag": "B", "level": "Easy", "v": 1},
+{"id": "t097", "cat": "connect", "title": "Work line on eSIM, personal on SIM", "why": "UK models keep a SIM tray. Label the lines Work and Personal and set a default line per contact.", "path": "Settings › Mobile Service", "tag": "B", "level": "Medium"},
+{"id": "t098", "cat": "connect", "title": "Wi-Fi Calling on", "why": "Calls still work in thick-walled basements and rural houses with Wi-Fi.", "path": "Settings › Mobile Service › Wi-Fi Calling", "tag": "S", "level": "Easy", "d1": 1},
+{"id": "t099", "cat": "connect", "title": "Personal Hotspot for the laptop", "why": "Turn on Maximise Compatibility for older devices.", "path": "Settings › Personal Hotspot", "tag": "S", "level": "Easy"},
+{"id": "t100", "cat": "connect", "title": "Offline maps for rural jobs", "why": "Download Apple or Google Maps areas, and OS Maps offline.", "path": "Maps › Offline Maps", "tag": "S", "level": "Easy"},
+{"id": "t101", "cat": "apps", "title": "Measuring and plans", "why": "Measure (built in), Magicplan, RoomScan Pro, Canvas, Polycam, SiteScape, Leica DISTO Plan, Bosch MeasureOn.", "path": "", "tag": "S", "level": "Medium"},
+{"id": "t102", "cat": "apps", "title": "Photo evidence", "why": "Solocator, Timestamp Camera, Google Photos.", "path": "", "tag": "S", "level": "Easy"},
+{"id": "t103", "cat": "apps", "title": "Location and parking", "why": "OS Maps, what3words for access points, Google Maps and Earth, RingGo, JustPark, PayByPhone.", "path": "", "tag": "S", "level": "Easy"},
+{"id": "t104", "cat": "apps", "title": "Thermal and damp", "why": "USB-C thermal cameras (FLIR ONE Edge, Topdon TC002C, InfiRay P2 Pro) and Bluetooth moisture meter apps. Check iOS 27 support before buying.", "path": "", "tag": "S", "level": "Medium", "v": 1},
+{"id": "t105", "cat": "apps", "title": "Recording and dictation", "why": "Plaud, Voice Memos, Notes audio with transcript. Phone call recording announces itself; get consent.", "path": "", "tag": "S", "level": "Easy"},
+{"id": "t106", "cat": "apps", "title": "Reporting and admin", "why": "Google Drive, Docs, Gmail and Calendar; Xero; Dext for receipts; Adobe Scan or Genius Scan; PDF Expert for marking up drawings and notices.", "path": "", "tag": "S", "level": "Easy"},
+{"id": "t107", "cat": "apps", "title": "Web bookmarks on the Home Screen", "why": "GOV.UK flood map, EPC register, HM Land Registry, Historic England listings, local planning portals.", "path": "Safari › Share › Add to Home Screen", "tag": "S", "level": "Easy"},
+{"id": "t108", "cat": "personal", "title": "Join the Siri AI waitlist", "why": "The new Siri needs you to join a waitlist, which can take hours to days. UK English is supported.", "path": "Settings › Apple Intelligence & Siri", "tag": "P", "level": "Easy", "d1": 1},
+{"id": "t109", "cat": "personal", "title": "Scheduled notification summary", "why": "Non-urgent apps delivered together at 12:30 and 18:00.", "path": "Settings › Notifications › Scheduled Summary", "tag": "P", "level": "Easy"},
+{"id": "t110", "cat": "personal", "title": "Prioritise and summarise notifications", "why": "Condenses busy group chats and email threads.", "path": "Settings › Notifications", "tag": "P", "level": "Easy"},
+{"id": "t111", "cat": "personal", "title": "Text Replacement for surveying phrases", "why": "“pwa” becomes “Party Wall etc. Act 1996”, “adjo” becomes “adjoining owner”. Syncs to Mac and iPad.", "path": "Settings › General › Keyboard › Text Replacement", "tag": "S", "level": "Easy", "d1": 1},
+{"id": "t112", "cat": "personal", "title": "UK English dictation with auto-punctuation", "why": "Makes dictated defect notes usable without editing.", "path": "Settings › General › Keyboard › Dictation", "tag": "B", "level": "Easy"},
+{"id": "t113", "cat": "personal", "title": "Writing Tools for client emails", "why": "Proofread or adjust tone on selected text.", "path": "Select text › Writing Tools", "tag": "B", "level": "Easy"},
+{"id": "t114", "cat": "personal", "title": "Sleep, Driving and Personal Focus", "why": "Driving Focus can auto-reply to clients while you drive.", "path": "Settings › Focus", "tag": "P", "level": "Easy"},
+{"id": "t115", "cat": "personal", "title": "Screen Time downtime and limits", "why": "Evening downtime and app limits.", "path": "Settings › Screen Time", "tag": "P", "level": "Easy"},
+{"id": "t116", "cat": "personal", "title": "Custom Wallet passes", "why": "New in iOS 27. Add site access cards, trade counter and gym cards.", "path": "Wallet › + › Create a Pass", "tag": "B", "level": "Easy"},
+{"id": "t117", "cat": "personal", "title": "Safari Notify Me", "why": "New in iOS 27. Watch a planning application or tender page for changes.", "path": "Safari › page menu › Notify Me", "tag": "S", "level": "Easy"},
+{"id": "t118", "cat": "personal", "title": "AirPods towards Transparency on site", "why": "Hear traffic and site hazards while on a call.", "path": "Settings › [AirPods]", "tag": "B", "level": "Easy"}
+];
+const FACTS = "<strong>What we're getting.</strong> iPhone 18 Pro (6.3\") and 18 Pro Max (6.9\"), on sale in the UK from 18 September 2026, running iOS 27. New for us: a variable-aperture main camera (f/1.48 to f/4) with manual Pro Controls, three 48MP rear cameras including a 4x telephoto, LiDAR, and UK models keep a SIM tray plus eSIM. Tips marked <em>Check on device</em> come from launch reporting we haven't confirmed on a phone yet.";
+const SOURCES = "Collated September 2026 from Apple Support, the Apple Newsroom, MacRumors, MacObserver, Tom's Guide, Macworld, 9to5Mac and PetaPixel, plus surveying app vendors. Add ideas by editing the list at the top of the script in <code>iphone-setup/index.html</code>.";
 
 /* ===== APP ===== */
 const KEY = 'inform-iphone18-done-v1';
@@ -210,7 +382,7 @@ function renderTip(t){
     <h3>${esc(t.title)}</h3>
     <p class="why">${esc(t.why)}</p>
     ${path}
-    <div class="chips"><span class="chip ${t.tag}">${TAGNAME[t.tag]}</span>${t.d1?'<span class="chip d1">Day one</span>':''}<span class="chip">${esc(t.level)}</span>${t.v?'<span class="chip v" title="Not yet confirmed for iPhone 18 / iOS 26">Check on device</span>':''}</div>
+    <div class="chips"><span class="chip ${t.tag}">${TAGNAME[t.tag]}</span>${t.d1?'<span class="chip d1">Day one</span>':''}<span class="chip">${esc(t.level)}</span>${t.v?'<span class="chip v" title="Not yet confirmed for iPhone 18 / iOS 27">Check on device</span>':''}</div>
   </article>`;
 }
 
