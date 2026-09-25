@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>iPhone 18 Field Setup</title>
+<meta name="description" content="Inform Surveying's collated set-up guide for iPhone 18: shortcuts, Home Screen, display, camera, storage, safety and personal settings, with a tick-off checklist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Rubik:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Tokens follow the Party Wall Guide (Inform brand): teal, amber, paper. */
+:root{
+  --bg:#FAF8F5; --surface:#FFFFFF; --surface-2:#F2EDE6; --line:#E4E0D9;
+  --ink:#15252C; --body:#4A4F52; --muted:#7A7F80;
+  --teal:#0E3542; --teal-mid:#1A5568; --accent:#D67D24; --accent-ink:#B4651A; --accent-soft:rgba(214,125,36,.13);
+  --s-col:#1A5568; --s-soft:rgba(26,85,104,.10);
+  --p-col:#7A4E8C; --p-soft:rgba(122,78,140,.10);
+  --ok:#166534; --ok-soft:rgba(22,101,52,.10);
+  --head-bg:#0E3542; --head-ink:#FFFFFF; --head-muted:rgba(255,255,255,.62);
+  --shadow:0 1px 2px rgba(20,37,44,.05),0 6px 20px rgba(20,37,44,.06);
+  --r:10px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B1A20; --surface:#11252D; --surface-2:#173039; --line:#22404A;
+    --ink:#EEF3F4; --body:#C3CDD0; --muted:#8FA0A5;
+    --teal:#7FC3D6; --teal-mid:#7FC3D6; --accent:#E8912F; --accent-ink:#F0A552; --accent-soft:rgba(232,145,47,.16);
+    --s-col:#8ACFE2; --s-soft:rgba(138,207,226,.12);
+    --p-col:#D3A8E4; --p-soft:rgba(211,168,228,.12);
+    --ok:#6BCB8B; --ok-soft:rgba(107,203,139,.13);
+    --head-bg:#08171E; --head-ink:#FFFFFF; --head-muted:rgba(255,255,255,.55);
+    --shadow:none;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B1A20; --surface:#11252D; --surface-2:#173039; --line:#22404A;
+  --ink:#EEF3F4; --body:#C3CDD0; --muted:#8FA0A5;
+  --teal:#7FC3D6; --teal-mid:#7FC3D6; --accent:#E8912F; --accent-ink:#F0A552; --accent-soft:rgba(232,145,47,.16);
+  --s-col:#8ACFE2; --s-soft:rgba(138,207,226,.12);
+  --p-col:#D3A8E4; --p-soft:rgba(211,168,228,.12);
+  --ok:#6BCB8B; --ok-soft:rgba(107,203,139,.13);
+  --head-bg:#08171E; --head-ink:#FFFFFF; --head-muted:rgba(255,255,255,.55);
+  --shadow:none;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html,body{margin:0;}
+body{background:var(--bg);color:var(--body);font:15px/1.6 'Open Sans',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;}
+h1,h2,h3{font-family:'Rubik',system-ui,sans-serif;color:var(--ink);text-wrap:balance;margin:0;}
+a{color:var(--accent-ink);}
+button{font:inherit;}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+/* ===== Header ===== */
+.head{background:var(--head-bg);color:var(--head-ink);padding-block:22px 18px;}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:16px;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand img{height:30px;width:auto;}
+.brand span{font:500 .66rem/1 'Rubik',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--head-muted);border-left:1px solid rgba(255,255,255,.2);padding-left:12px;}
+.head h1{color:var(--head-ink);font-size:clamp(1.6rem,4.5vw,2.3rem);font-weight:800;letter-spacing:-.01em;margin-top:18px;line-height:1.15;}
+.head h1 em{font-style:normal;color:#E8912F;}
+.head p{color:var(--head-muted);max-width:62ch;margin:8px 0 0;font-size:.95rem;}
+.meter{margin-top:18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.bar{flex:1 1 220px;height:8px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden;}
+.bar i{display:block;height:100%;width:0;background:#E8912F;transition:width .3s;}
+.meter b{font:600 .85rem 'Rubik',sans-serif;font-variant-numeric:tabular-nums;color:var(--head-ink);white-space:nowrap;}
+.meter small{color:var(--head-muted);font-size:.78rem;}
+
+/* ===== Toolbar ===== */
+.tools{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);padding-block:10px;}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.search{flex:1 1 220px;min-width:0;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font-size:.92rem;}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface);}
+.seg button{border:0;background:none;padding:8px 11px;color:var(--body);font-size:.8rem;font-weight:600;cursor:pointer;}
+.seg button[aria-pressed="true"]{background:var(--teal);color:var(--bg);}
+.toggle{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;color:var(--body);cursor:pointer;padding:8px 4px;}
+.toggle input{accent-color:var(--accent);width:16px;height:16px;}
+.cats{display:flex;gap:6px;overflow-x:auto;margin-top:8px;padding-bottom:2px;scrollbar-width:none;}
+.cats::-webkit-scrollbar{display:none;}
+.cats button{flex:none;border:1px solid var(--line);background:var(--surface);color:var(--body);border-radius:99px;padding:6px 12px;font-size:.78rem;font-weight:600;cursor:pointer;white-space:nowrap;}
+.cats button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);color:var(--ink);}
+.cats button small{font-variant-numeric:tabular-nums;color:var(--muted);margin-left:4px;font-weight:500;}
+
+/* ===== Content ===== */
+main{padding-block:20px 60px;}
+.note{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;font-size:.88rem;display:grid;gap:4px;}
+.note strong{color:var(--ink);}
+section.cat{margin-top:28px;}
+.cat-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;border-bottom:2px solid var(--ink);padding-bottom:6px;margin-bottom:12px;}
+.cat-h h2{font-size:1.15rem;font-weight:700;}
+.cat-h span{font:500 .78rem 'Rubik',sans-serif;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap;}
+.cat-intro{margin:-4px 0 12px;font-size:.88rem;max-width:70ch;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;}
+@media (max-width:420px){.grid{grid-template-columns:1fr;}}
+.tip{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 14px 12px;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-content:start;box-shadow:var(--shadow);}
+.tip.done{opacity:.6;}
+.tip.done h3{text-decoration:line-through;text-decoration-color:var(--muted);}
+.chk{grid-row:span 4;margin-top:2px;width:22px;height:22px;border-radius:6px;border:2px solid var(--line);background:var(--bg);cursor:pointer;display:grid;place-items:center;padding:0;color:transparent;}
+.chk:hover{border-color:var(--accent);}
+.tip.done .chk{background:var(--ok);border-color:var(--ok);color:var(--bg);}
+.chk svg{width:13px;height:13px;}
+.tip h3{font-size:.98rem;font-weight:600;line-height:1.35;}
+.why{margin:0;font-size:.86rem;line-height:1.55;}
+.path{font:400 .74rem/1.5 'IBM Plex Mono',ui-monospace,Menlo,monospace;color:var(--ink);background:var(--surface-2);border-radius:6px;padding:4px 8px;justify-self:start;overflow-wrap:anywhere;}
+.path b{color:var(--accent-ink);font-weight:500;margin:0 3px;}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;}
+.chip{font:600 .66rem/1 'Rubik',sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:4px 7px;border-radius:5px;background:var(--surface-2);color:var(--muted);}
+.chip.S{background:var(--s-soft);color:var(--s-col);}
+.chip.P{background:var(--p-soft);color:var(--p-col);}
+.chip.B{background:var(--ok-soft);color:var(--ok);}
+.chip.d1{background:var(--accent-soft);color:var(--accent-ink);}
+.chip.v{background:transparent;border:1px dashed var(--line);}
+.empty{padding:40px 0;text-align:center;color:var(--muted);}
+footer{border-top:1px solid var(--line);padding-block:20px 40px;font-size:.8rem;color:var(--muted);}
+footer p{margin:0 0 6px;max-width:80ch;}
+.linkbtn{background:none;border:0;color:var(--accent-ink);text-decoration:underline;cursor:pointer;padding:0;font-size:inherit;}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+</style>
+</head>
+<body>
+
+<header class="head">
+  <div class="wrap">
+    <div class="brand"><img src="../assets/img/logo-amber.png" alt="Inform Surveying"><span>Field kit</span></div>
+    <h1>iPhone 18 <em>field set-up</em></h1>
+    <p>The best settings, shortcuts and apps for surveying on site, plus the personal tweaks worth making on day one. Tick each one off as you set up your phone. Your ticks stay on this device.</p>
+    <div class="meter" aria-live="polite">
+      <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Set-up progress"><i id="barFill"></i></div>
+      <b id="countLabel">0 of 0 done</b>
+      <small id="day1Label"></small>
+    </div>
+  </div>
+</header>
+
+<div class="tools">
+  <div class="wrap">
+    <div class="row">
+      <input id="q" class="search" type="search" placeholder="Search tips, apps or settings…" aria-label="Search tips">
+      <div class="seg" role="group" aria-label="Who it's for">
+        <button type="button" data-aud="all" aria-pressed="true">All</button>
+        <button type="button" data-aud="S" aria-pressed="false">Surveying</button>
+        <button type="button" data-aud="P" aria-pressed="false">Personal</button>
+      </div>
+      <label class="toggle"><input id="day1" type="checkbox"> Day one only</label>
+      <label class="toggle"><input id="hideDone" type="checkbox"> Hide done</label>
+    </div>
+    <div class="cats" id="cats" role="group" aria-label="Categories"></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="note" id="facts"></div>
+  <div id="list"></div>
+</main>
+
+<footer class="wrap">
+  <p id="sourcesLine"></p>
+  <p>Settings paths are for iOS 26 as shipped on iPhone 18 Pro. Apple moves things between releases, so if a path has changed, search for the setting name in the Settings app.</p>
+  <p><button type="button" class="linkbtn" id="reset">Clear my ticks</button> <span id="resetConfirm" hidden>Tap again to confirm.</span></p>
+</footer>
+
+<script>
+/* ===== DATA =====
+   cat: category id. tag: S = surveying, P = personal, B = both.
+   level: Easy / Medium / Advanced. d1: do on day one.
+   path: Settings path, "›" separated. v: unverified for iPhone 18 / iOS 26. */
+const CATS = [/*CATS*/];
+const TIPS = [/*TIPS*/];
+const FACTS = /*FACTS*/"";
+const SOURCES = /*SOURCES*/"";
+
+/* ===== APP ===== */
+const KEY = 'inform-iphone18-done-v1';
+let done = {};
+try { done = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { done = {}; }
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(done)); } catch (e) {} };
+
+const state = { q:'', aud:'all', cat:'all', day1:false, hideDone:false };
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const TAGNAME = { S:'Surveying', P:'Personal', B:'Both' };
+const tick = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3L13 4.5"/></svg>';
+
+function matches(t){
+  if (state.aud !== 'all' && !(t.tag === state.aud || t.tag === 'B')) return false;
+  if (state.cat !== 'all' && t.cat !== state.cat) return false;
+  if (state.day1 && !t.d1) return false;
+  if (state.hideDone && done[t.id]) return false;
+  if (state.q){
+    const hay = (t.title + ' ' + t.why + ' ' + (t.path||'')).toLowerCase();
+    if (!state.q.split(/\s+/).every(w => hay.includes(w))) return false;
+  }
+  return true;
+}
+
+function renderCats(){
+  const counts = {};
+  TIPS.forEach(t => { counts[t.cat] = (counts[t.cat]||0) + 1; });
+  const btn = (id, name, n) => `<button type="button" data-cat="${id}" aria-pressed="${state.cat===id}">${esc(name)}<small>${n}</small></button>`;
+  $('#cats').innerHTML = btn('all','All', TIPS.length) + CATS.map(c => btn(c.id, c.name, counts[c.id]||0)).join('');
+}
+
+function renderTip(t){
+  const path = t.path ? `<div class="path">${t.path.split('›').map(p => esc(p.trim())).join('<b>›</b>')}</div>` : '';
+  return `<article class="tip${done[t.id]?' done':''}" data-id="${t.id}">
+    <button type="button" class="chk" aria-pressed="${!!done[t.id]}" aria-label="Mark “${esc(t.title)}” done">${tick}</button>
+    <h3>${esc(t.title)}</h3>
+    <p class="why">${esc(t.why)}</p>
+    ${path}
+    <div class="chips"><span class="chip ${t.tag}">${TAGNAME[t.tag]}</span>${t.d1?'<span class="chip d1">Day one</span>':''}<span class="chip">${esc(t.level)}</span>${t.v?'<span class="chip v" title="Not yet confirmed for iPhone 18 / iOS 26">Check on device</span>':''}</div>
+  </article>`;
+}
+
+function render(){
+  const out = [];
+  CATS.forEach(c => {
+    const items = TIPS.filter(t => t.cat === c.id && matches(t));
+    if (!items.length) return;
+    const all = TIPS.filter(t => t.cat === c.id);
+    const d = all.filter(t => done[t.id]).length;
+    out.push(`<section class="cat" id="${c.id}"><div class="cat-h"><h2>${esc(c.name)}</h2><span>${d}/${all.length} done</span></div>${c.intro?`<p class="cat-intro">${esc(c.intro)}</p>`:''}<div class="grid">${items.map(renderTip).join('')}</div></section>`);
+  });
+  $('#list').innerHTML = out.join('') || '<p class="empty">Nothing matches. Clear the search or filters.</p>';
+  const n = TIPS.filter(t => done[t.id]).length;
+  const d1 = TIPS.filter(t => t.d1), d1n = d1.filter(t => done[t.id]).length;
+  $('#barFill').style.width = (TIPS.length ? n / TIPS.length * 100 : 0) + '%';
+  $('#countLabel').textContent = `${n} of ${TIPS.length} done`;
+  $('#day1Label').textContent = `Day-one essentials: ${d1n} of ${d1.length}`;
+}
+
+document.addEventListener('click', e => {
+  const c = e.target.closest('.chk');
+  if (c){ const id = c.closest('.tip').dataset.id; if (done[id]) delete done[id]; else done[id] = 1; save(); render(); return; }
+  const a = e.target.closest('[data-aud]');
+  if (a){ state.aud = a.dataset.aud; document.querySelectorAll('[data-aud]').forEach(b => b.setAttribute('aria-pressed', b===a)); render(); return; }
+  const k = e.target.closest('[data-cat]');
+  if (k){ state.cat = k.dataset.cat; renderCats(); render(); return; }
+});
+$('#q').addEventListener('input', e => { state.q = e.target.value.trim().toLowerCase(); render(); });
+$('#day1').addEventListener('change', e => { state.day1 = e.target.checked; render(); });
+$('#hideDone').addEventListener('change', e => { state.hideDone = e.target.checked; render(); });
+let armed = false;
+$('#reset').addEventListener('click', () => {
+  if (!armed){ armed = true; $('#resetConfirm').hidden = false; setTimeout(() => { armed = false; $('#resetConfirm').hidden = true; }, 4000); return; }
+  done = {}; save(); armed = false; $('#resetConfirm').hidden = true; render();
+});
+
+$('#facts').innerHTML = FACTS;
+$('#sourcesLine').innerHTML = SOURCES;
+renderCats();
+render();
+</script>
+</body>
+</html>
